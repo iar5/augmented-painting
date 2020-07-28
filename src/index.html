@@ -4,20 +4,20 @@
 	<title>Dion Painting Placer</title>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/src/style.css">
+	<link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
-	<div>
-		<h1>Dion Painting Placer</h1>
-		<h2>More information</h2>
-		<div style="display: none">
-			<h3>Requirements</h3>
-			<p>This augmented reality application requires the webxr api which is a pretty new technology only supported by latest mobile/tablet devices with browser versions. Its working best with the google chrome browser</p>
-			<p>If your device comply with the requirements and the site is completly loaded there should appear a button on bottom of this page with whom you can start augmented reality</p>
-			<h3>Showcase</h3>
-			<p>[video]</p>
-			<h3>Entwicklung</h3>
-			<a href="https://tomwendland.de/">Tom Wendland</a>
+	<div id="landingPage">
+		<div id="landingContent">
+			<h1>Dion Painting Placer</h1>
+			<div>
+				<p>
+					This augmented reality application requires the webxr api which is a pretty new technology, only supported by latest mobile devices and latest browser versions. 
+					Its working best with the Google Chrome browser.
+					If your device comply with the requirements and the website is completly loaded, there should appear a button to start the application.
+					By <a href="https://tomwendland.de/">Tom Wendland</a>
+				</p>
+			</div>
 		</div>
 	</div>
 
@@ -28,9 +28,9 @@
 
 		<div id="exit">✕</div>
 		<div id="controlPanel">
-			<input type="button" id="next" value="next">
-			<input type="button" id="placeReset" value="place">
 			<input type="button" id="prev" value="prev">
+			<input type="button" id="placeReset" value="place">
+			<input type="button" id="next" value="next">
 		</div>
 		<div id="debuginfo"></div>
 		<!-- button id="arButton" injected by three -->	

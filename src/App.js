@@ -52,13 +52,13 @@ function init() {
     reticle.matrixAutoUpdate = false; // wenn false ändert position, rotation etc properties die matrix propertie nicht automatisch
     reticle.visible = false;
     scene.add(reticle);
-    reticle.add(new THREE.AxesHelper(0.5));
+    //reticle.add(new THREE.AxesHelper(0.5));
 
     controller = renderer.xr.getController(0);
     controller.addEventListener('select', onSelect);
     scene.add(controller);
 
-    scene.add(new THREE.AxesHelper(1));
+    //scene.add(new THREE.AxesHelper(1));
 }
 
 function initGUI(){
@@ -87,8 +87,6 @@ function onPlace() {
     } 
     else if(reticle.visible) {
         painting = new Painting();
-        painting.add(new THREE.AxesHelper());
-
         painting.position.setFromMatrixPosition(reticle.matrix);
         painting.rotation.setFromRotationMatrix(reticle.matrix);
 

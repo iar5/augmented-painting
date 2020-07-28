@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Prata";
+    src: url("./Prata-Regular.ttf");
+}
+
 * {
     padding:0;
     margin:0;
@@ -5,12 +10,44 @@
 }
 
 html, body{
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-body:not(.insideXR) #arButton{
-    background: rgba(0, 0, 0, 0.6) !important; 
+/* LANDING PAGE */
+
+#landingPage *{
+	font-family: 'Prata', serif;
+	font-weight: normal;
+}
+#landingPage{
+	display: grid;
+	place-items: center;
+	width: 100%;
+    height: 100%;
+    animation: 3s fadeInAnimation ease-in-out 
+} 
+  
+@keyframes fadeInAnimation { 
+    0% { opacity: 0; } 
+    100% { opacity: 1; } 
+}
+
+#landingContent{
+	max-width: 300px;
+	padding-bottom: 100px;
+}
+#landingContent p{
+	font-size: 0.8em;
+}
+
+#arButton{
+    background: rgb(221, 221, 221) !important; 
+    color: black !important;
+    border-radius: 0 !important;
+    border: 1px solid black !important;
+    opacity: 1 !important;
+    animation: 1s fadeInAnimation ease-in-out 
 }
 
 body:not(.insideXR) #arOverlay{
@@ -18,6 +55,9 @@ body:not(.insideXR) #arOverlay{
 }
 
 
+
+
+/* INSIDE XR */
 
 #controlPanel{ 	
     position: absolute;	
@@ -47,9 +87,8 @@ body:not(.insideXR) #arOverlay{
 
 body.insideXR input[type="button"]{
     padding: 12px 6px; 
-    margin: 6px;
+    margin: 2px;
     border: 0; 
-    border-radius: 4px; 
     background: rgba(0, 0, 0, 0.4); 
     color: rgb(255, 255, 255); 
     font: 13px sans-serif; 
@@ -57,4 +96,5 @@ body.insideXR input[type="button"]{
     opacity: 0.5; 
     outline: none; 
     text-transform: uppercase;
+    border-radius: 0 !important;
 }

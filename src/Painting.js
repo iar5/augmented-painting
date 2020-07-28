@@ -12,7 +12,7 @@ export default class Painting extends THREE.Mesh{
         var materials = [
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/xpos.png') } ),
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/xneg.png') } ),
-            new THREE.MeshBasicMaterial( { map: texLoader.load('fotos/2. Frau mit Mantel.jpg') } ),
+            new THREE.MeshBasicMaterial( { map: texLoader.load('fotos/7. QUEEN NO.1.jpg') } ),
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/yneg.png') } ),
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/zpos.png') } ),
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/zneg.png') } )
