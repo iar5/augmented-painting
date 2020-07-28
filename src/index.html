@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dion Painting Placer</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/src/style.css">
+</head>
+<body>
+	<div>
+		<h1>Dion Painting Placer</h1>
+		<h2>More information</h2>
+		<div style="display: none">
+			<h3>Requirements</h3>
+			<p>This augmented reality application requires the webxr api which is a pretty new technology only supported by latest mobile/tablet devices with browser versions. Its working best with the google chrome browser</p>
+			<p>If your device comply with the requirements and the site is completly loaded there should appear a button on bottom of this page with whom you can start augmented reality</p>
+			<h3>Showcase</h3>
+			<p>[video]</p>
+			<h3>Entwicklung</h3>
+			<a href="https://tomwendland.de/">Tom Wendland</a>
+		</div>
+	</div>
+
+	<div id="arOverlay">
+		<div>
+			<!--p>Bewege zuerst die Kamera im Raum, um diesen zu scannen</p-->
+		</div>
+
+		<div id="exit">✕</div>
+		<div id="controlPanel">
+			<input type="button" id="next" value="next">
+			<input type="button" id="placeReset" value="place">
+			<input type="button" id="prev" value="prev">
+		</div>
+		<div id="debuginfo"></div>
+		<!-- button id="arButton" injected by three -->	
+	</div>
+</body>
+</html>
+<style>
+#debuginfo{
+	color: black;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+</style>
