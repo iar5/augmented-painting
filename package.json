@@ -1,28 +1,57 @@
 {
-  "name": "ar-rave",
-  "version": "1.0.0",
-  "description": "",
+  "name": "ar-painting",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "webpack-dev-server --open --hot --public",
-    "build": "webpack"
-  },
-  "keywords": [],
-  "devDependencies": {
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.5.2",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^4.2.0",
-    "imports-loader": "^0.8.0",
-    "json-loader": "^0.5.7",
-    "style-loader": "^1.1.4",
-    "ts-loader": "^7.0.1",
-    "typescript": "^3.8.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
     "stats-js": "^1.0.1",
-    "three": "^0.116.1"
-  }
+    "three": "^0.121.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "no-unused-vars": "off",
+      "no-console": "off",
+      "vue/no-unused-components": "off"
+    }
+  },
+  "vue": {
+    "devServer": {
+      "https": true
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "title": "I need You tonight",
+        "src_full": "fotos/full/1. I need You tonight.jpg",
+        "src_720": "fotos/720/1. I need You tonight.jpg",
+        "publishing_date": "Oktober 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 2,
+        "title": "Frau mit Mantel",
+        "src_full": "fotos/full/2. Frau mit Mantel.jpg",
+        "src_720": "fotos/720/2. Frau mit Mantel.jpg",
+        "publishing_date": "Oktober 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 3,
+        "title": "Disco Love",
+        "src_full": "fotos/full/3. Disco Love.jpg",
+        "src_720": "fotos/720/3. Disco Love.jpg",
+        "publishing_date": "Oktober 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 4,
+        "title": "Vino Vernissage",
+        "src_full": "fotos/full/4. Vino Vernissage.jpg",
+        "src_720": "fotos/720/4. Vino Vernissage.jpg",
+        "publishing_date": "November 2019",
+        "material": "Sprühlack, Acryl, Tinte und Ölkreide auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 5,
+        "title": "Drinking out until I drown too",
+        "src_full": "fotos/full/5. Drinking out until I drown too.jpg",
+        "src_720": "fotos/720/5. Drinking out until I drown too.jpg",
+        "publishing_date": "November 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 6,
+        "title": "Confused",
+        "src_full": "fotos/full/6. Confused.jpg",
+        "src_720": "fotos/720/6. Confused.jpg",
+        "publishing_date": "Dezember 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 7,
+        "title": "QUEEN NO.1",
+        "src_full": "fotos/full/7. QUEEN NO.1.jpg",
+        "src_720": "fotos/720/7. QUEEN NO.1.jpg",
+        "publishing_date": "Dezember 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 8,
+        "title": "QUEEN NO.2",
+        "src_full": "fotos/full/8. QUEEN NO.2.jpg",
+        "src_720": "fotos/720/8. QUEEN NO.2.jpg",
+        "publishing_date": "Dezember 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 9,
+        "title": "Dions Guernica",
+        "src_full": "fotos/full/9. Dions Guernica.jpg",
+        "src_720": "fotos/720/9. Dions Guernica.jpg",
+        "publishing_date": "Dezember 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    },
+    {
+        "id": 10,
+        "title": "I invite my mind to a horse ride",
+        "src_full": "fotos/full/10. I invite my mind to a horse ride .jpg",
+        "src_720": "fotos/720/10. I invite my mind to a horse ride .jpg",
+        "publishing_date": "Dezember 2019",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 120,
+        "height": 150
+    }
+]
