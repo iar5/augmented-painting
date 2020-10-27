@@ -3,7 +3,7 @@
     <p id="f1">good to see you!</p>
     <p id="f2">this website is using your camera to dislpay paintings <br>on your living room wall</p>
     <p id="f3">in Augmented Reality.</p>
-    <p id="f4">... swipe to browser paintings :-)</p>
+    <p id="f4">... swipe to browse paintings ツ</p>
   </div>
 </template>
 

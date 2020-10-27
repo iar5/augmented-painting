@@ -2,10 +2,11 @@
   <div id="app">
     <Header/>
     <main>
-      <swiper :slides-per-view="2" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+      <PaintingList/>
+      <!--swiper :slides-per-view="2" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
         <swiper-slide><Landing/></swiper-slide>
         <swiper-slide><PaintingList/></swiper-slide>
-      </swiper>
+      </swiper-->
     </main>
     <Footer/>
     <ArControler/>
@@ -19,6 +20,7 @@ import PaintingList from './PaintingList.vue'
 import Landing from './Landing.vue'
 import ArControler from './ArControler.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
+// https://swiperjs.com/vue/
 
 export default {
   name: 'App',
