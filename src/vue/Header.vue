@@ -1,63 +1,101 @@
 <template>
   <header>
-    <h1>Painting Placer</h1>
-    <nav>
+
+    <div v-show="showNav" id="headerbg" @click="showNav = false"></div>
+
+    <div id="headercontent">
+      <div id="headerline">
+        <span @click="showNav = !showNav">=</span>
+        <h1>Painting Placer</h1>
+        <span @click="openXR()">AR</span>
+      </div>
+
+      <nav v-show="showNav">
         <ul>
-          <li v-for="(route, i) in routen" :key="i" >
-            <a> {{ route.title }}</a>
+          <li v-for="(n, i) in nav" :key="i" >
+            <a href=""> {{ n.title }}</a>
           </li>
         </ul>
-    </nav>  
-    <ArButton id="enterBtn"/>
+      </nav>  
+    </div>
+
   </header>
 </template>
 
 <script>
-import ArButton from './ArButton.vue'
 
 export default {
-  components: {
-    ArButton,
-  },
   data(){
     return {
-      routen: [
-        {title: "A"},
-        {title: "B"},
-        {title: "C"},
+      nav: [
+        {title: "splash screen"},
+        {title: "help"},
+        {title: "contact"},
       ],
-      currentRouteName: ""
+      currentRouteName: "",
+      showNav: false,
     }
+  },
+  methods:{
+    openXR(){
+      this.$root.$data.arApp.openXR()
+    },
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 header{
-  padding: 1%;
-  padding-top: 3%;
-  padding-bottom: 20px;
-  margin-bottom: 3%;
-  
-  h1, nav, ul, li {
-    display: inline-block;
+  font-family: 'Prata', serif;
+  font-weight: normal;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  #headerbg{
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 100%;
   }
-  
-  h1{
-    font-size: 2.5em;
-    margin-right: 50px;
-    margin-bottom: 10px;
-  }
-  nav{
-    ul{
-      padding: 0;
-      margin: 0;
-      li{
-        padding-right: 25px;
-        a{
-          font-size: 1.2em;
-          &.highlightA{
-            color: rgb(255, 115, 0);
+
+  #headercontent{ // extra container damit nicht z indizieren für bg muss
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    #headerline{
+      padding: 20px 0 20px; // kein margin weil sonst baxshade runter zieht
+      background: white;
+
+      >*{
+        vertical-align: middle;
+        text-align: center  
+      }   
+      span {
+        display: inline-block;
+        width: 10%;
+      }
+      h1{
+        display: inline-block;
+        width: 80%;
+        font-size: 1.5em;
+      }
+    }
+
+    nav{
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: white;
+
+      ul{
+        padding: 0 0 10px 0;
+        li{
+          a{
+            font-size: 1em;
           }
         }
       }

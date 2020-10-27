@@ -46,7 +46,7 @@
   },
   "vue": {
     "devServer": {
-      "https": true
+      "https": false
     }
   },
   "browserslist": [

@@ -1,7 +1,7 @@
 <template>
   <div id="paintings">
-    <div class="painting" v-for="p in paintingdata" :key=p.id>
-      <img :src="p.src_720">
+    <div class="painting" v-for="p in paintings" :key=p.id @click="()=>openXRWithPainting(p.id)">
+      <img :src="p.src_720" :width="p.width" :height="p.height" >
       <p class="title">{{p.title}}</p>
       <p class="info">{{p.width}} × {{p.height}}</p>
       <p class="info">{{p.publishing_date}}</p>
@@ -11,14 +11,18 @@
 </template>
 
 <script>
-import paintingdata from './../../public/fotos/data.json'
 
 export default {
   data(){
     return {
-      paintingdata
+      paintings: require('./../../public/fotos/data.json')
     }
   },
+  methods: {
+    openXRWithPainting(pid){
+      this.$root.$data.arApp.openXR(pid)
+    }
+  }
 }
 </script>
 
@@ -27,20 +31,22 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 2%;
 
   .painting{
-    width: 48%;
+    width: 49%;
     margin-bottom: 30px;
     font-family: sans-serif;
 
     img{
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: auto;
     }
 
     .title{
 
     }
+
     .info{
       font-weight: light;
       font-size: 0.8em;

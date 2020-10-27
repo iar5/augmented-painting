@@ -14,11 +14,7 @@
 </template>
 
 <script>
-import { createSession, clickXRButton, placePainting, registerXROnOffCallback } from '../three/App.js'
-
-/*
- * This component should always be active and used as a overlay in and by WebXR
-*/
+import ArApp from '../three/App.js'
 
 export default {
     data(){
@@ -27,20 +23,18 @@ export default {
         }
     },
     mounted(){
-        let overlay = document.querySelector("#arOverlay")
-        createSession(overlay)
-
-        registerXROnOffCallback(bool => {
-            this.isInsideAr = bool
-        })
-    },
+      let overlay = document.querySelector("#arOverlay")
+      this.$root.$data.arApp = new ArApp(overlay, bool => {
+          this.isInsideAr = bool
+      })
+  },
     methods:{
-        exit(){
-            if(!this.isInsideAr) return
-            this.isInsideAr = false;
-            clickXRButton()
+        place(){
+            this.$root.$data.arApp.placePainting()
         },
-        place: placePainting
+        exit(){
+            this.$root.$data.arApp.closeXR()
+        }
     }
 }
 </script>
