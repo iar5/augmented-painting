@@ -5,9 +5,9 @@
 
     <div id="headercontent">
       <div id="headerline">
-        <div @click="showNav = !showNav">=</div>
-        <h1>Painting Placer</h1>
-        <div><img src="/aricon.png" @click="openXR()"></div>
+        <div @click="showNav = !showNav" class="pointer">=</div>
+        <h1 class="underline">Painting Placer</h1>
+        <div class="pointer"><img src="/aricon.png" @click="openXR()"></div>
       </div>
 
       <nav v-show="showNav">

@@ -2,11 +2,10 @@
   <div id="app">
     <Header/>
     <main>
-      <PaintingList/>
-      <!--swiper :slides-per-view="2" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+      <swiper :slides-per-view="2" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
         <swiper-slide><Landing/></swiper-slide>
         <swiper-slide><PaintingList/></swiper-slide>
-      </swiper-->
+      </swiper>
     </main>
     <Footer/>
     <ArControler/>
@@ -56,6 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("/style/components.css");
+
 html, body{
 	width: 100%;
 	height: 100%;
@@ -68,6 +69,7 @@ html, body{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
   box-sizing: border-box;
   min-height: 100%;
+  overflow-x: hidden;
 }
 main{
   height: 100%;
