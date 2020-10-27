@@ -32,6 +32,13 @@
 
 
 
-<style>
+<style scoped lang="scss">
 
+h3{
+    font-family: Prata;
+}
+p, a{
+    font-family: sans-serif;
+    font-size: 0.8em
+}
 </style>

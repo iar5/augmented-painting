@@ -30,11 +30,14 @@ export default {
 #paintings{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 2%;
+  justify-content: center;
+  height: 100%;
+  overflow-y: scroll;
+
 
   .painting{
-    width: 49%;
+    width: 44%;
+    margin: 0 2%;
     margin-bottom: 30px;
     font-family: sans-serif;
 
@@ -44,12 +47,12 @@ export default {
     }
 
     .title{
-
+      font-size: 1rem;
     }
 
     .info{
       font-weight: light;
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       color: rgba(0, 0, 0, .8)
     }
   }

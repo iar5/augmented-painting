@@ -14,26 +14,26 @@
 #landing{
   position: relative;
 	width: 100%;
-  height: 100vh;
+  height: 100%;
   animation: 3s fadeInAnimation ease-in-out; 
   font-family: Prata;
   vertical-align: middle;
   text-align: center;
 
+
   #f1{
-    padding-top: 40vh;
-    font-size: 2.2rem;
+    padding-top: 30vh;
+    font-size: 2rem;
   }
   #f2{
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: .8rem;
   }
   #f3{
     margin-top: 20px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   #f4{
-    margin-top: 100px;
     font-size: .8rem;
     position: absolute;
     bottom: 20px;

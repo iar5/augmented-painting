@@ -1,33 +1,34 @@
 <template>
   <div id="app">
     <Header/>
+    <div id="headerPlaceholder"></div>
     <main>
-      <swiper :slides-per-view="2" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+      <swiper :slides-per-view="1" :space-between="100">
         <swiper-slide><Landing/></swiper-slide>
         <swiper-slide><PaintingList/></swiper-slide>
+        <swiper-slide><Help/></swiper-slide>
       </swiper>
     </main>
-    <Footer/>
     <ArControler/>
   </div>
 </template>
 
 <script>
 import Header from './Header.vue'
-import Footer from './Footer.vue'
 import PaintingList from './PaintingList.vue'
 import Landing from './Landing.vue'
+import Help from './Help.vue'
 import ArControler from './ArControler.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue';
-// https://swiperjs.com/vue/
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer,
     PaintingList,
     Landing,
+    Help,
     ArControler,
     Swiper,
     SwiperSlide,
@@ -44,12 +45,7 @@ export default {
     })
   },
   methods: {
-    onSwiper(swiper) {
-      console.log(swiper)
-    },
-    onSlideChange() {
-      console.log('slide change')
-    },
+
   },
 }
 </script>
@@ -68,10 +64,23 @@ html, body{
   margin: 0 auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
   box-sizing: border-box;
-  min-height: 100%;
-  overflow-x: hidden;
+  height: 100%;
+}
+
+#headerPlaceholder{
+  // weil header sticky bzw absolute ist er aus dom flus raus
+  height: 13%
 }
 main{
+  height: 87%;
+}
+.swiper-container{
   height: 100%;
+  width: 90%;
+  margin: auto;
+}
+.swiper-wrapper{
+  height: 100%;
+  width: 100%;
 }
 </style>

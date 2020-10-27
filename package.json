@@ -1,30 +1,40 @@
 {
-  "name": "hello-world3",
+  "name": "painting-placer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "start": "serve dist",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.4",
     "serve": "^11.3.2",
-    "swiper": "^6.3.4",
-    "three": "^0.121.1",
-    "vue": "^3.0.0"
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@tweenjs/tween.js": "^18.6.4",
+    "@vue/cli-plugin-babel": "^4.5.8",
+    "@vue/cli-plugin-eslint": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "stats-js": "^1.0.1",
+    "swiper": "^6.3.4",
+    "three": "^0.121.1",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "vue": {
+    "devServer": {
+      "https": false
+    }
   },
   "eslintConfig": {
     "root": true,
@@ -32,7 +42,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/essential",
       "eslint:recommended"
     ],
     "parserOptions": {
