@@ -2,8 +2,10 @@
   <div id="app">
     <Header/>
     <main>
-        <Landing/>
-        <!--PaintingList/-->
+      <swiper :slides-per-view="2" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+        <swiper-slide><Landing/></swiper-slide>
+        <swiper-slide><PaintingList/></swiper-slide>
+      </swiper>
     </main>
     <Footer/>
     <ArControler/>
@@ -16,6 +18,7 @@ import Footer from './Footer.vue'
 import PaintingList from './PaintingList.vue'
 import Landing from './Landing.vue'
 import ArControler from './ArControler.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 export default {
   name: 'App',
@@ -25,6 +28,8 @@ export default {
     PaintingList,
     Landing,
     ArControler,
+    Swiper,
+    SwiperSlide,
   },
   data(){
     return {
@@ -36,7 +41,14 @@ export default {
     navigator.xr.isSessionSupported('immersive-ar').then(supported => {
       this.$root.$data.isArNotSupported = supported
     })
-
+  },
+  methods: {
+    onSwiper(swiper) {
+      console.log(swiper)
+    },
+    onSlideChange() {
+      console.log('slide change')
+    },
   },
 }
 </script>

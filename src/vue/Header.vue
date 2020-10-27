@@ -5,9 +5,9 @@
 
     <div id="headercontent">
       <div id="headerline">
-        <span @click="showNav = !showNav">=</span>
+        <div @click="showNav = !showNav">=</div>
         <h1>Painting Placer</h1>
-        <span @click="openXR()">AR</span>
+        <div><img src="/aricon.png" @click="openXR()"></div>
       </div>
 
       <nav v-show="showNav">
@@ -51,7 +51,7 @@ header{
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
 
   #headerbg{
       background: rgba(0, 0, 0, 0.4);
@@ -74,13 +74,17 @@ header{
         vertical-align: middle;
         text-align: center  
       }   
-      span {
+      div{
         display: inline-block;
-        width: 10%;
+        width: 50px;
+
+        img{
+          width: 30px;
+        }
       }
       h1{
         display: inline-block;
-        width: 80%;
+        width: calc(100% - 100px);
         font-size: 1.5em;
       }
     }

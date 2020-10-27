@@ -49,7 +49,7 @@ export default {
 
     .info{
       font-weight: light;
-      font-size: 0.8em;
+      font-size: 0.8rem;
       color: rgba(0, 0, 0, .8)
     }
   }

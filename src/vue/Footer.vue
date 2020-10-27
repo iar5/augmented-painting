@@ -7,10 +7,10 @@
 
 <style lang="scss">
 footer{
-    margin-top: 100px;
+    //padding-top: 100px;
 
     p{
-        font-size: 0.8em;
+        font-size: 0.8rem;
         font-family: sans-serif;
         
     }

@@ -1,51 +1,45 @@
 <template>
   <div id="landing">
-    <div id="lcontent1">
-      <p>Welcome</p>
-      <p>to Painting Placer</p>
-      <p>This website is using your camera to dislpay paintings on your living room wall</p>
-      <p>
-        by <a href="https://tomwendland.de">Tom Wendland</a> &#38;
-        <a href="https://www.instagram.com/dion.ateliero/">DION</a>
-      </p>
-      <p>Swipe to browser paintings</p>
-      <p></p>
-    </div>
+    <p id="f1">good to see you!</p>
+    <p id="f2">this website is using your camera to dislpay paintings <br>on your living room wall</p>
+    <p id="f3">in Augmented Reality.</p>
+    <p id="f4">... swipe to browser paintings :-)</p>
   </div>
 </template>
 
 
-<script>
-export default {
-}
-</script>
 
 
 <style coped lang="scss">
 #landing{
-  font-family: sans-serif;
-  font-weight: normal;
-
-  display: grid;
-	place-items: center;
+  position: relative;
 	width: 100%;
   height: 100vh;
   animation: 3s fadeInAnimation ease-in-out; 
-
+  font-family: Prata;
+  vertical-align: middle;
   text-align: center;
 
-  #lcontent1{
-    vertical-align: middle;
-    max-width: 350px;
-    padding-bottom: 100px;
-
-    h1{
-      font-weight: 100;
-    }
-    p { 
-      font-size: 0.8em;
-    }
+  #f1{
+    padding-top: 40vh;
+    font-size: 2.2rem;
   }
+  #f2{
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  #f3{
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+  #f4{
+    margin-top: 100px;
+    font-size: .8rem;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  
 }
 
 @keyframes fadeInAnimation { 
