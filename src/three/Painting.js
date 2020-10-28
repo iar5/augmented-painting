@@ -22,7 +22,7 @@ export default class Painting extends THREE.Mesh{
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/zpos.png') } ),
             new THREE.MeshBasicMaterial( { map: texLoader.load('test/zneg.png') } )
         ];
-        var geometry = new THREE.BoxBufferGeometry(1.2, 0.1, 1.5).translate(0, -0.05, 0)
+        var geometry = new THREE.BoxBufferGeometry(parseInt(data.width)/100, 0.1, parseInt(data.height)/100).translate(0, -0.05, 0)
 
         super(geometry, materials)
     }
