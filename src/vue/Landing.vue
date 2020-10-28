@@ -22,7 +22,7 @@
 
 
   #f1{
-    padding-top: 30vh;
+    padding-top: 23vh;
     font-size: 2rem;
   }
   #f2{

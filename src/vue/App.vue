@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header v-show="showHeader"/>
     <div id="headerPlaceholder"></div>
     <main>
-      <swiper :slides-per-view="1" :space-between="100">
+      <swiper :slides-per-view="1" :space-between="100" @slideChange="onSlideChange">
         <swiper-slide><Landing/></swiper-slide>
         <swiper-slide><PaintingList/></swiper-slide>
         <swiper-slide><Help/></swiper-slide>
@@ -35,8 +35,7 @@ export default {
   },
   data(){
     return {
-      isArSupported: undefined,
-      isIOS: undefined,
+      showHeader: false
     }
   },
   created(){
@@ -45,7 +44,9 @@ export default {
     })
   },
   methods: {
-
+    onSlideChange(e){
+      this.showHeader = e.activeIndex != 0
+    }
   },
 }
 </script>
@@ -74,13 +75,9 @@ html, body{
 main{
   height: 87%;
 }
-.swiper-container{
-  height: 100%;
-  width: 90%;
-  margin: auto;
-}
-.swiper-wrapper{
-  height: 100%;
+.swiper-wrapper, .swiper-container{
   width: 100%;
+  height: 100%;
 }
+
 </style>

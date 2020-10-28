@@ -1,10 +1,10 @@
 <template>
-    <div id="arOverlay" v-show="isInsideAr">
-        <div id="exit" @click="exit">✕</div>
+    <div id="arOverlay" :class="isInsideAr ? 'isInsideAr' : ''">
         <div id="tipps">
             <!--p>Bewege zuerst die Kamera im Raum, um diesen zu scannen</p-->
         </div>
 
+        <input type="button" id="exit" value="✕" @click="exit">
         <div id="controlPanel">
             <input type="button" id="prev" value="prev">
             <input type="button" id="place" @click="place" value="place">
@@ -23,11 +23,11 @@ export default {
         }
     },
     mounted(){
-      let overlay = document.querySelector("#arOverlay")
-      this.$root.$data.arApp = new ArApp(overlay, bool => {
-          this.isInsideAr = bool
-      })
-  },
+        let overlay = document.querySelector("#arOverlay")
+        this.$root.$data.arApp = new ArApp(overlay, (isInsideAr) => {
+            this.isInsideAr = isInsideAr
+        })
+    },
     methods:{
         place(){
             this.$root.$data.arApp.placePainting()
@@ -41,14 +41,15 @@ export default {
 
 <style scoped lang="scss">
 #arOverlay{
+    visibility: hidden;
+    &.isInsideAr{
+        visibility: visible; // mit v-show klappt nicht richtig
+    }
 
     #exit{
         position: absolute;
-        right: 0;
-        top: 0;
-        color: white;
-        margin: 10px;
-        font-size: 20px;
+        right: 10px;
+        top: 10px;
         width: 20px;
         height: 20px;
     }
@@ -64,22 +65,29 @@ export default {
         justify-content: center; 
 
         #place{
-            width: 150px;
+            width: 160px;
         }
     }
 
+    #exit{
+        background: none;
+        overflow: visible;
+    }
+
     input[type=button]{
-        padding: 12px 6px; 
+        padding: 8px 20px; 
         margin: 2px;
         border: 0; 
         background: rgba(0, 0, 0, 0.4); 
-        color: rgb(255, 255, 255); 
+        color: white; 
         font: 13px sans-serif; 
         text-align: center; 
         opacity: 0.5; 
         outline: none; 
         text-transform: uppercase;
         border-radius: 0 !important;
+        cursor: pointer;
+        z-index: 100;
     }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <header>
+
     <div v-show="showNav" id="headerbg" @click="showNav = false"></div>
 
     <div id="headercontent">
@@ -16,6 +17,7 @@
           </li>
         </ul>
       </nav>  
+
     </div>
   </header>
 </template>
@@ -27,7 +29,7 @@ export default {
     return {
       nav: [
         {title: "splash screen"},
-        {title: "about the painting"},
+        {title: "about"},
         {title: "help"},
         {title: "contact"},
       ],
@@ -67,7 +69,7 @@ header{
     top: 0;
 
     #headerline{
-      padding: 30px 0 20px; // kein margin weil sonst baxshade runter zieht
+      padding-top: 25px; // kein margin weil sonst baxshade runter zieht
 
       >*{
         vertical-align: middle;
@@ -84,7 +86,7 @@ header{
       h1{
         display: inline-block;
         width: calc(100% - 100px);
-        font-size: 1.4em;
+        font-size: 1.6em;
       }
     }
 
@@ -94,10 +96,13 @@ header{
       text-align: center;
 
       ul{
-        padding: 0 0 10px 0;
+        padding: 10px 0 10px 0;
         li{
+          margin: 5px 0;
           a{
             font-size: 1em;
+            color: black;
+            text-decoration: none;
           }
         }
       }

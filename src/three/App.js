@@ -24,7 +24,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
     var controller
     var reticle
     
-    var isArModus = false
+    var isArRunning = false
     var default_pid = 0
     var painting = null
     
@@ -73,26 +73,26 @@ export default function(GUIOvelayElement, XROnOffCallback){
 
 
     function isInsideXR(){
-        return isArModus
+        return isArRunning
     }
 
     function openXR(pid){
         if(pid) default_pid = pid
-        if(!isArModus) {
+        if(!isArRunning) {
             arbutton.click()
-            if(XROnOffCallback) XROnOffCallback(isArModus);
+            if(XROnOffCallback) XROnOffCallback(true);
         }
     }
 
     function closeXR(){
-        if(isArModus) {
+        if(isArRunning) {
             arbutton.click()
-            if(XROnOffCallback) XROnOffCallback(isArModus);
+            if(XROnOffCallback) XROnOffCallback(false);
         }
     }
 
-    function displayPainting(pid = default_pid){
-        if(!isArModus) return
+    function placePainting(pid = default_pid){
+        if(!isArRunning) return
         
         let ok = reticle.visible
         if(ok) {
@@ -127,10 +127,9 @@ export default function(GUIOvelayElement, XROnOffCallback){
 
     function render(timestamp, frame) {
 
-        if(isArModus != !!frame)
-            console.log("This should not happen");
+        isArRunning = !!frame
 
-        if(isArModus){
+        if(isArRunning){
             i++
 
             if(!painting){
@@ -181,7 +180,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
         isInsideXR,
         openXR,
         closeXR,
-        displayPainting,
+        placePainting,
         removePainting,
     }
 }

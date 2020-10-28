@@ -1,7 +1,7 @@
 <template>
   <div id="paintings">
-    <div class="painting" v-for="p in paintings" :key=p.id @click="()=>openXRWithPainting(p.id)">
-      <img :src="p.src_720" :width="p.width" :height="p.height" >
+    <div class="painting" v-for="p in paintings" :key=p.id :class="p.width > p.height ? 'breitBild' : ''"  @click="openXRWithPainting(p.id)">
+      <img :src="p.src_720" :width="p.width" :height="p.height">
       <p class="title">{{p.title}}</p>
       <p class="info">{{p.width}} × {{p.height}}</p>
       <p class="info">{{p.publishing_date}}</p>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 export default {
   data(){
     return {
@@ -19,6 +18,15 @@ export default {
     }
   },
   methods: {
+    filterPaintings(paintings, format){
+      return paintings.filter((p)=>{
+        switch(this.format){
+          case "w": return p.width > p.height; 
+          case "h": return p.width < p.height; 
+          case "q": return p.width == p.height;
+        }
+      })
+    },
     openXRWithPainting(pid){
       this.$root.$data.arApp.openXR(pid)
     }
@@ -34,12 +42,15 @@ export default {
   height: 100%;
   overflow-y: scroll;
 
-
   .painting{
-    width: 44%;
-    margin: 0 2%;
     margin-bottom: 30px;
     font-family: sans-serif;
+    width: 50%;
+    padding: 2%;
+
+    &.breitBild{
+      width: 60%
+    }
 
     img{
       width: 100%;
