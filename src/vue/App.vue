@@ -3,7 +3,7 @@
     <Header v-show="showHeader"/>
     <div id="headerPlaceholder"></div>
     <main>
-      <swiper :slides-per-view="1" :space-between="100" @slideChange="onSlideChange">
+      <swiper @slideChange="onSlideChange">
         <swiper-slide><Landing/></swiper-slide>
         <swiper-slide><PaintingList/></swiper-slide>
         <swiper-slide><Help/></swiper-slide>
@@ -35,13 +35,8 @@ export default {
   },
   data(){
     return {
-      showHeader: false
+      showHeader: false,
     }
-  },
-  created(){
-    navigator.xr.isSessionSupported('immersive-ar').then(supported => {
-      this.$root.$data.isArNotSupported = supported
-    })
   },
   methods: {
     onSlideChange(e){
@@ -74,10 +69,12 @@ html, body{
 }
 main{
   height: 87%;
+
+  .swiper-wrapper, .swiper-container{
+    width: 100%;
+    height: 100%;
+  }
 }
-.swiper-wrapper, .swiper-container{
-  width: 100%;
-  height: 100%;
-}
+
 
 </style>
