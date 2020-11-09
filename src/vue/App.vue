@@ -76,5 +76,11 @@ main{
   }
 }
 
+h2{
+  font-size: 1.4rem;
+}
+h3{
+  font-size: 1rem;
+}
 
 </style>

@@ -3,7 +3,11 @@
     <p id="f1">good to see you!</p>
     <p id="f2">this website is using your camera to dislpay paintings <br>on your living room wall</p>
     <p id="f3">in Augmented Reality.</p>
-    <p id="f4">... swipe to browse paintings ツ</p>
+    <div id="landingBoxes">
+      <div><div><p>use directly augmented reality</p></div></div>
+      <div><div><p>browser paintings first</p></div></div>
+    </div>
+    <!--p id="f4">... tap to browse paintings ツ</p-->
   </div>
 </template>
 
@@ -39,7 +43,29 @@
     bottom: 20px;
     width: 100%;
   }
-  
+
+  #landingBoxes{
+    width: 100%;
+    margin-top: 60px;
+    >div{
+      width: 110px;
+      height: 110px;
+      border: 1px solid black;
+      vertical-align: middle;
+      text-align: center;
+      display: inline-block;
+      >div{
+        display: flex;
+        height: 100%;
+        p{
+          margin: auto;
+        }
+      }
+      &:nth-of-type(1){
+        margin-right: 10px;
+      }
+    }
+  }
 }
 
 @keyframes fadeInAnimation { 

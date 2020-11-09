@@ -45,11 +45,11 @@ export default {
   .painting{
     margin-bottom: 30px;
     font-family: sans-serif;
-    width: 50%;
+    width: 45%;
     padding: 2%;
 
     &.breitBild{
-      width: 60%
+      width: 57%
     }
 
     img{

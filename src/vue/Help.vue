@@ -1,37 +1,56 @@
 <template>
     <div id="help">
+
         <h2>Help</h2>
 
-        <h3>Supported devices</h3>
-        <div>
+        <section>
+            <h3>Description</h3>
             <p>
-            Painting Placer requires the webxr api which is a pretty new technology, only supported by latest mobile devices and latest browser versions. 
-            If your device comply with the requirements and the website is completly loaded, there should appear a button to start the application.
+                Painting Placer is an augmented reality web app which brings paintings into your room through your mobile device camera. 
+                First it needs to detect your room structure sparely. When you see a reticle, this part of your room is successfully tracked an you can place the painting!
+                While you can move in you room, the position of the painting will remain and you can take a look from different perspectives and hopefully it will fit perfectly into you interior.
             </p>
-        </div>
-        <div>
-            <p><span style="text-decoration: underline; color: red">Sorry</span>,
-            unfortunately usual iPhone and iPad browser did not implement the webxr standard yet.
-            Since so, we suggest to use the WevXR Viewer browser by Mozilla. 
-            You can <a href="https://apps.apple.com/us/app/webxr-viewer/id1295998056">download it from you App Store</a>
+        </section>
+
+        <section>
+            <h3>Supported devices</h3>
+            <p>
+                Using augented reality directly in the browser requires your browser to implementation the WebXR standard, which can be seen as pretty new software technologie.
+                Ts only supported by latest mobile devices and latest browser versions. 
             </p>
-        </div>
+            <p>
+                <span style="font-weight: normal">Unfortunately Painting Placer is not working on common Apple device browsers yet. </span>
+                Until its working there in Safari, Chrome or Firefox I suggest using the WevXR Viewer browser by Mozilla. 
+                You can <a href="https://apps.apple.com/us/app/webxr-viewer/id1295998056">download it from your App Store</a>.
+            </p>
+        </section>
 
-        <h3>Usage</h3>
-        <div>Descripton of how to use the app best here</div>
 
+        <img src="/assets/s9hand.png">
     </div>
 </template>
 
 
 
 <style scoped lang="scss">
-
-h3{
-    font-family: Prata;
-}
 p, a{
     font-family: sans-serif;
-    font-size: 0.8em
+    font-size: 0.8rem;
+    text-align: justify;
+    font-weight: lighter;
+
 }
+#help{
+    padding: 2% 10%;
+    box-sizing: border-box;
+}
+section{
+    margin-top: 20px;
+    h3{
+        margin-bottom: 5px;
+        font-family: Prata;
+    }
+}
+
+
 </style>

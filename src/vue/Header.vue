@@ -7,7 +7,7 @@
       <div id="headerline">
         <div @click="showNav = !showNav" class="pointer">=</div>
         <h1>Painting Placer</h1>
-        <div class="pointer"><img src="/aricon.png" @click="openXR()"></div>
+        <div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div>
       </div>
 
       <nav v-show="showNav">
