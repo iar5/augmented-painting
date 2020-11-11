@@ -29,6 +29,7 @@
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
     "vue-template-compiler": "^2.6.12"
   },
   "vue": {

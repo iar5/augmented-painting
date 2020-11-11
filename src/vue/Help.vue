@@ -26,7 +26,7 @@
         </section>
 
 
-        <img src="/assets/s9hand.png">
+        <img src="/assets/s9hand.png" width="700px" height="887px">
     </div>
 </template>
 
@@ -38,19 +38,28 @@ p, a{
     font-size: 0.8rem;
     text-align: justify;
     font-weight: lighter;
+}
 
-}
 #help{
-    padding: 2% 10%;
-    box-sizing: border-box;
-}
-section{
-    margin-top: 20px;
-    h3{
-        margin-bottom: 5px;
-        font-family: Prata;
+    position: relative;
+
+    section{
+        margin-top: 20px;
+        h3{
+            margin-bottom: 5px;
+            font-family: Prata;
+        }
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        box-sizing: border-box;
     }
 }
+
 
 
 </style>

@@ -3,17 +3,17 @@
 
     <div v-show="showNav" id="headerbg" @click="showNav = false"></div>
 
-    <div id="headercontent">
+    <div id="headercontent" :style="showNav ? 'background-color: white': ''">
       <div id="headerline">
         <div @click="showNav = !showNav" class="pointer">=</div>
-        <h1>Painting Placer</h1>
+        <h1><router-link to="/">Painting Place | ar</router-link></h1>
         <div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div>
       </div>
 
       <nav v-show="showNav">
         <ul>
-          <li v-for="(n, i) in nav" :key="i" >
-            <a href=""> {{ n.title }}</a>
+          <li v-for="(n, i) in nav" :key="i" @click="showNav=false">
+            <router-link :class="{'activeNavLink': isActiveNavLink(n.path)}" :to="n.path">{{n.title}}</router-link>
           </li>
         </ul>
       </nav>  
@@ -28,10 +28,10 @@ export default {
   data(){
     return {
       nav: [
-        {title: "splash screen"},
-        {title: "about"},
-        {title: "help"},
-        {title: "contact"},
+        //{title: "splash screen", path: "/splash"},
+        {title: "browser paintins", path: "/"},
+        {title: "help", path: "/help"},
+        {title: "contact", path: "/contact"},
       ],
       currentRouteName: "",
       showNav: false,
@@ -41,6 +41,12 @@ export default {
     openXR(){
       this.$root.$data.arApp.openXR()
     },
+    isActiveNavLink(route){
+        return this.$route.path == route;
+    },
+    scrollToTop() {
+        window.scrollTo(0,0);
+    }
   }
 }
 </script>
@@ -50,7 +56,7 @@ header{
   font-family: 'Prata', serif;
   font-weight: normal;
   width: 100%;
-  position: absolute;
+  position: sticky;
   top: 0;
   z-index: 10;
 
@@ -64,13 +70,13 @@ header{
 
   #headercontent{ // extra container damit nicht z indizieren für bg muss
     width: 100%;
-    background: white;
+    //background: rgba(255, 255, 255, 0.9);
     position: absolute;
     top: 0;
 
     #headerline{
       padding-top: 25px; // kein margin weil sonst baxshade runter zieht
-
+      padding-bottom: 20px;
       >*{
         vertical-align: middle;
         text-align: center  
@@ -80,7 +86,7 @@ header{
         width: 50px;
 
         img{
-          width: 30px;
+          width: 25px;
         }
       }
       h1{
@@ -96,13 +102,17 @@ header{
       text-align: center;
 
       ul{
-        padding: 10px 0 10px 0;
+        padding: 0 0 20px 0;
         li{
           margin: 5px 0;
           a{
             font-size: 1em;
             color: black;
             text-decoration: none;
+
+            &.activeNavLink{
+              font-weight: bold;
+            }
           }
         }
       }

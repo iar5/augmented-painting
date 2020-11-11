@@ -38,15 +38,14 @@ export default {
 #paintings{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
-  overflow-y: scroll;
 
   .painting{
-    margin-bottom: 30px;
+    margin-bottom: 0;
     font-family: sans-serif;
-    width: 45%;
-    padding: 2%;
+    width: 40%;
+    padding: 4%;
 
     &.breitBild{
       width: 57%
@@ -58,12 +57,15 @@ export default {
     }
 
     .title{
-      font-size: 1rem;
+      font-size: 0.8rem;
+      line-height: 20px;
+      font-weight: bold;;
     }
 
     .info{
       font-weight: light;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
+      line-height: 14px;
       color: rgba(0, 0, 0, .8)
     }
   }
