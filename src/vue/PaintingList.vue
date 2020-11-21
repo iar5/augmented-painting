@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { log } from 'three';
 export default {
   data(){
     return {
@@ -28,6 +29,7 @@ export default {
       })
     },
     openXRWithPainting(pid){
+      console.log("Open "+pid)
       this.$root.$data.arApp.openXR(pid)
     }
   }

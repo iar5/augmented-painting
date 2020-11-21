@@ -34,7 +34,7 @@
   },
   "vue": {
     "devServer": {
-      "https": false
+      "https": true
     }
   },
   "eslintConfig": {

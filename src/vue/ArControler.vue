@@ -1,10 +1,10 @@
 <template>
-    <div id="arControler" :class="$root.$data.isInsideAr ? 'isInsideAr' : 'isInsideAr'">
+    <div id="arControler" :class="$root.$data.isInsideAr ? 'isInsideAr' : ''">
         <div id="arOverlay">
             <input type="button" id="exit" value="✕" @click="exit">
         
             <div id="bottomUpPanel">
-                <ArPaintingSlider/>
+                <!--ArPaintingSlider/-->
 
                 <div id="buttonPane">
                     <input type="button" id="place" @click="place" value="place">
@@ -62,10 +62,10 @@ export default {
 #arOverlay{
     #exit{
         position: absolute;
-        right: 10px;
-        top: 10px;
-        width: 20px;
-        height: 20px;
+        right: 20px;
+        top: 20px;
+        width: 40px;
+        height: 40px;
         background: none;
         overflow: visible;
     }

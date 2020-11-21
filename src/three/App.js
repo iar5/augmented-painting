@@ -77,6 +77,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
     }
 
     function openXR(pid){
+        removePainting()
         if(pid) default_pid = pid
         if(!isArRunning) {
             arbutton.click()
@@ -85,6 +86,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
     }
 
     function closeXR(){
+        removePainting()
         if(isArRunning) {
             arbutton.click()
             if(XROnOffCallback) XROnOffCallback(false);

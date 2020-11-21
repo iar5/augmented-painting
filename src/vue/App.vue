@@ -6,7 +6,6 @@
       <router-view></router-view>
     </main>
     <ArControler/>
-    <div id="bg"></div>
   </div>
 </template>
 
@@ -44,15 +43,6 @@ html, body{
   margin: 0 auto;
   box-sizing: border-box;
   min-height: 100vh;
-}
-#bg{
-  position: fixed;
-  top: 0;
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-  height: 100vh;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
 }
 
 #headerPlaceholder{

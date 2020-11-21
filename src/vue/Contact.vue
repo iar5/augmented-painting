@@ -3,13 +3,11 @@
         <h2>Contact</h2>
 
         <section>
-            <h3>Artist</h3>
-            <p><a href="https://www.instagram.com/dion.ateliero/">DION</a></p>
+            <p><span class="bold">Paintings by </span><a href="https://www.instagram.com/dion.ateliero/">DION</a></p>
         </section>
 
         <section>
-            <h3>Developer</h3>
-            <p><a href="https://tomwendland.de">Tom Wendland</a></p>
+            <p><span class="bold">App development by </span><a href="https://tomwendland.de">Tom Wendland</a></p>
         </section>
     </div>
 </template>
