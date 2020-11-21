@@ -1,5 +1,5 @@
 <template>
-    <div id="arControler" :class="$root.$data.isInsideAr ? 'isInsideAr' : ''">
+    <div id="arControler" :class="showGUI ? 'isInsideAr' : ''">
         <div id="arOverlay">
             <input type="button" id="exit" value="✕" @click="exit">
         
@@ -28,7 +28,7 @@ export default {
     },
     data(){
         return {
-            
+            showGUI: this.$root.$data.isInsideAr
         }
     },
     mounted(){
@@ -36,8 +36,10 @@ export default {
             this.$root.$data.isArSupported = supported
         })
 
+        this.$root.$data.isInsideAr = false
         this.$root.$data.arApp = new ArApp(document.querySelector("#arOverlay"), (isInsideAr) => {
             this.$root.$data.isInsideAr = isInsideAr
+            this.showGUI = isInsideAr
         })
     },
     methods:{
@@ -62,10 +64,9 @@ export default {
 #arOverlay{
     #exit{
         position: absolute;
-        right: 20px;
-        top: 20px;
-        width: 40px;
-        height: 40px;
+        font-size: 1.2rem;
+        right: 15px;
+        top: 15px;
         background: none;
         overflow: visible;
     }
@@ -85,13 +86,14 @@ export default {
 
     #place{
         width: 160px;
+        border: 1px solid white
     }
 
     input[type=button]{
         padding: 8px 20px; 
         margin: 2px;
         border: 0; 
-        background: rgba(0, 0, 0, 0.2); 
+        background: transparent;
         color: white; 
         font: 13px sans-serif; 
         text-align: center; 

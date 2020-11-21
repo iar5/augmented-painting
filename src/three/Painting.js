@@ -15,12 +15,12 @@ export default class Painting extends THREE.Mesh{
     constructor(id){
         let data = findPaintingData(id)
         var materials = [
-            new THREE.MeshBasicMaterial( { map: texLoader.load('test/xpos.png') } ),
-            new THREE.MeshBasicMaterial( { map: texLoader.load('test/xneg.png') } ),
+            new THREE.MeshBasicMaterial( {color: "white"} ),
+            new THREE.MeshBasicMaterial( {color: "white"} ),
             new THREE.MeshBasicMaterial( { map: texLoader.load(data.src_full) } ),
-            new THREE.MeshBasicMaterial( { map: texLoader.load('test/yneg.png') } ),
-            new THREE.MeshBasicMaterial( { map: texLoader.load('test/zpos.png') } ),
-            new THREE.MeshBasicMaterial( { map: texLoader.load('test/zneg.png') } )
+            new THREE.MeshBasicMaterial( {color: "white"} ),
+            new THREE.MeshBasicMaterial( {color: "white"} ),
+            new THREE.MeshBasicMaterial( {color: "white"} ),
         ];
         var geometry = new THREE.BoxBufferGeometry(parseInt(data.width)/100, 0.1, parseInt(data.height)/100).translate(0, -0.05, 0)
 
