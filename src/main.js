@@ -5,6 +5,7 @@ import Contact from './vue/Contact.vue'
 import Help from './vue/Help.vue'
 import Splash from './vue/Landing.vue'
 import PaintingList from './vue/PaintingList.vue'
+import Introduction from './vue/Introduction.vue'
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false
@@ -14,6 +15,7 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: PaintingList },
+    { path: '/introduction', component: Introduction },
     { path: '/contact', component: Contact },
     { path: '/help', component: Help },
     { path: '/splash', component: Splash },

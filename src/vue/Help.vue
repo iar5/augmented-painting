@@ -24,9 +24,6 @@
                 You can <a href="https://apps.apple.com/us/app/webxr-viewer/id1295998056">download it from your App Store</a>.
             </p>
         </section>
-
-
-        <img src="/assets/s9hand.png" width="700px" height="887px">
     </div>
 </template>
 
@@ -51,12 +48,9 @@ p, a{
         }
     }
 
-    img{
-        width: 100%;
-        height: auto;
-        position: absolute;
-        bottom: 0;
-        box-sizing: border-box;
+    a{
+        color: initial !important;
+        text-decoration: underline;
     }
 }
 

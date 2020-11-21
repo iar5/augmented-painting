@@ -6,6 +6,8 @@
       <router-view></router-view>
     </main>
     <ArControler/>
+    <div id="bgShadow"></div>
+    <p id="beta">beta version</p>
   </div>
 </template>
 
@@ -69,5 +71,29 @@ h3{
 
 a{
   color: black;
+}
+
+#bgShadow{
+  position: fixed;
+  top: 0;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
+  z-index: -100;
+  pointer-events: none;
+}	
+
+#beta{
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  position: fixed;
+  left: 0; 
+  bottom: 0;
+  padding: 2px;
+  margin: 1%;
+  background-color: rgba(255,255,255, 0.4);
+  border: 1px solid  grey;
 }
 </style>
