@@ -29,8 +29,8 @@ export default {
     return {
       nav: [
         //{title: "splash screen", path: "/splash"},
-        {title: "browser paintins", path: "/"},
-        {title: "introduction", path: "/introduction"},
+        {title: "browse paintins", path: "/"},
+        //{title: "introduction", path: "/introduction"},
         {title: "help", path: "/help"},
         {title: "contact", path: "/contact"},
       ],

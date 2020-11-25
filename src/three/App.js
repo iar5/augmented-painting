@@ -27,7 +27,11 @@ export default function(GUIOvelayElement, XROnOffCallback){
     var isArRunning = false
     var default_pid = 0
     var painting = null
+
+    var firstReticleFound = false
+    var firstReticleCallback = ()=>{}
     
+
     new ErrorGui()
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth/window.innerHeight;
@@ -96,7 +100,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
     function placePainting(pid = default_pid){
         if(!isArRunning) return
         
-        let ok = reticle.visible
+        let ok = isReticle()
         if(ok) {
             painting = new Painting(pid);
             painting.position.setFromMatrixPosition(reticle.matrix);
@@ -109,12 +113,17 @@ export default function(GUIOvelayElement, XROnOffCallback){
     }
 
     function removePainting(){
-        if(painting) scene.remove(painting)
+        if(isPaintingPlaced()) scene.remove(painting)
         painting=null
     }
 
+    function isPaintingPlaced(){
+        return !!painting
+    }
 
-
+    function isReticle(){
+        return reticle.visible
+    }
 
 
     let aX = new Vector3()
@@ -157,6 +166,11 @@ export default function(GUIOvelayElement, XROnOffCallback){
                     if (hitTestResults.length) {
                         var hit = hitTestResults[0];
                         reticle.visible = true;
+
+                        if(!firstReticleFound){
+                            firstReticleFound = true
+                            firstReticleCallback()
+                        }
         
                         reticle.matrix.fromArray(hit.getPose(referenceSpace).transform.matrix);
                         
@@ -180,10 +194,15 @@ export default function(GUIOvelayElement, XROnOffCallback){
 
     return {
         isInsideXR,
+        isReticle,
+        isPaintingPlaced,
         openXR,
         closeXR,
         placePainting,
         removePainting,
+        setOnFirstReticleCallback(c){
+            firstReticleCallback = c
+        }
     }
 }
 

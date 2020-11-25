@@ -2,12 +2,17 @@
     <div id="arControler" :class="showGUI ? 'isInsideAr' : ''">
         <div id="arOverlay">
             <input type="button" id="exit" value="✕" @click="exit">
-        
+
+            <div id="moveTipp">
+                <img src="/assets/s9icon.svg">
+                <span>move your smartphone slightly around <br> to scan your room structure</span>
+            </div>
+
             <div id="bottomUpPanel">
                 <!--ArPaintingSlider/-->
 
                 <div id="buttonPane">
-                    <input type="button" id="place" @click="place" value="place">
+                    <input type="button" id="placeBtn" value="place">
                 </div>
             </div>
         </div>
@@ -37,15 +42,33 @@ export default {
         })
 
         this.$root.$data.isInsideAr = false
-        this.$root.$data.arApp = new ArApp(document.querySelector("#arOverlay"), (isInsideAr) => {
+        let arApp = this.$root.$data.arApp = new ArApp(document.querySelector("#arOverlay"), (isInsideAr) => {
             this.$root.$data.isInsideAr = isInsideAr
             this.showGUI = isInsideAr
         })
+
+        let moveTipp = document.getElementById("moveTipp")
+        arApp.setOnFirstReticleCallback(()=>{
+            moveTipp.classList.add("hideTipp")
+        })
+
+        let placeBtn = document.getElementById("placeBtn")
+        placeBtn.addEventListener("click", ()=>{
+            let p = arApp.isPaintingPlaced() 
+            let r = arApp.isReticle() 
+
+            if(!p && r){
+                arApp.placePainting()
+                placeBtn.value = "reset"
+            }
+            else if(p){
+                arApp.removePainting()
+                placeBtn.value = "place"
+            }
+        })
+        
     },
     methods:{
-        place(){
-            this.$root.$data.arApp.placePainting()
-        },
         exit(){
             this.$root.$data.arApp.closeXR()
         }
@@ -103,6 +126,42 @@ export default {
         cursor: pointer;
         z-index: 100;
         display: inline-block;
+    }
+}
+
+#moveTipp{
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .9;
+    transition: 0.3s opacity;
+    text-align: center;
+
+    &.hideTipp{
+        opacity: 0
+    }
+
+    >span{
+        display: inline-block;
+        width: 500px;
+        font-family: sans-serif;
+        color: white;
+        font-size: 0.8rem;
+    }
+
+    >img{
+        width: 30px;
+        display: inline-block;
+        animation: moveAnimation 8s infinite linear;
+
+        @keyframes moveAnimation {
+            0% {  transform: translateX(0px)    }
+            25%   {  transform: translateX(-30px) }
+            50%   {  transform: translateX(0) }
+            75%   {  transform: translateX(30px) }
+            0%   {  transform: translateX(0) }
+        }
     }
 }
 </style>

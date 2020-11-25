@@ -15,8 +15,8 @@
         <section>
             <h3>Supported devices</h3>
             <p>
-                Using augented reality directly in the browser requires your browser to implementation the WebXR standard, which can be seen as pretty new software technologie.
-                Ts only supported by latest mobile devices and latest browser versions. 
+                Using augented reality directly in the browser requires a modern mobile device with latest browser versions.
+                In detail: your need a browser which implemnted the WebXR standard, which can be seen as pretty new software technologie.  
             </p>
             <p>
                 <span style="font-weight: normal">Unfortunately Painting Placer is not working on common Apple device browsers yet. </span>
@@ -34,7 +34,7 @@ p, a{
     font-family: sans-serif;
     font-size: 0.8rem;
     text-align: justify;
-    font-weight: lighter;
+    font-weight: light;
 }
 
 #help{
