@@ -18,7 +18,6 @@ export default {
 
 <style scoped lang="scss">
 p, a{
-    font-family: sans-serif;
     font-size: 0.8rem;
     text-align: justify;
 }

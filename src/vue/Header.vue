@@ -108,10 +108,9 @@ header{
           margin: 5px 0;
           a{
             font-size: 1em;
-            font-family: sans-serif;
             color: black;
             text-decoration: none;
-
+    
             &.activeNavLink{
               
             }

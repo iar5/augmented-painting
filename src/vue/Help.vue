@@ -31,8 +31,8 @@
 
 <style scoped lang="scss">
 p, a{
-    font-family: sans-serif;
     font-size: 0.8rem;
+    line-height: 1.2rem;
     text-align: justify;
     font-weight: light;
 }

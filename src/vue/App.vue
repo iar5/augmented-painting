@@ -64,7 +64,6 @@ main{
 
 h2{
   font-size: 1.4rem;
-  font-family: sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -72,7 +71,6 @@ h2{
 }
 h3{
   font-size: 1rem;
-  font-family: sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -96,7 +94,6 @@ a{
 }	
 
 #beta{
-  font-family: sans-serif;
   font-size: 0.6rem;
   position: fixed;
   left: 0; 

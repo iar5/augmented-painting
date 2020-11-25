@@ -1,4 +1,10 @@
+
 @font-face {
     font-family: "Prata";
     src: url("./Prata-Regular.ttf");
+}
+
+*, header, #arControler {
+    /* header usw fixed pos deswegen applied * die nicht oder so */
+    font-family: sans-serif;
 }

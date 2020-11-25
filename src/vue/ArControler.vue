@@ -114,7 +114,7 @@ export default {
         border: 0; 
         background: transparent;
         color: white; 
-        font: 13px sans-serif; 
+        font-family: 13px; 
         text-align: center; 
         outline: none; 
         text-transform: uppercase;
@@ -141,7 +141,6 @@ export default {
     >span{
         display: inline-block;
         width: 500px;
-        font-family: sans-serif;
         color: white;
         font-size: 0.8rem;
     }

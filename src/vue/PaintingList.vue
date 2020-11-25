@@ -29,7 +29,7 @@ export default {
   },
   created(){
     navigator.xr.isSessionSupported('immersive-ar').then(supported => {
-      this.arWorking = supported // supported
+      this.arWorking = !!supported // supported
     })
   },
   methods: {
@@ -43,8 +43,7 @@ export default {
       })
     },
     openXRWithPainting(pid){
-      console.log("Open "+pid)
-      this.$root.$data.arApp.openXR(pid)
+      if(this.arWorking) this.$root.$data.arApp.openXR(pid)
     }
   }
 }
@@ -57,7 +56,6 @@ export default {
   display: flex;
   justify-content: center;
   display: inline-block;
-  font-family: sans-serif;
   font-size: 0.6rem;
   text-align: center;
   margin: 15px 0 25px 0;
@@ -79,7 +77,6 @@ export default {
 
   .painting{
     margin-bottom: 20px;
-    font-family: sans-serif;
     width: 45%;
     padding: 2%;
 
