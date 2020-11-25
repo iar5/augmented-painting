@@ -64,9 +64,19 @@ main{
 
 h2{
   font-size: 1.4rem;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
 }
 h3{
   font-size: 1rem;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 a{
@@ -87,13 +97,14 @@ a{
 
 #beta{
   font-family: sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   position: fixed;
   left: 0; 
   bottom: 0;
   padding: 2px;
   margin: 1%;
   background-color: rgba(255,255,255, 0.4);
-  border: 1px solid  grey;
+  color: black;
+  border: 1px solid  black;
 }
 </style>

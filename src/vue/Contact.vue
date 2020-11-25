@@ -3,12 +3,10 @@
         <h2>Contact</h2>
 
         <section>
-            <p><span class="bold">Paintings by </span><a href="https://www.instagram.com/dion.ateliero/">DION</a></p>
+            <p>Paintings by <a class="underline" href="https://www.instagram.com/dion.ateliero/">DION</a></p>
+            <p>App development by <a class="underline" href="https://tomwendland.de">Tom Wendland</a></p>
         </section>
 
-        <section>
-            <p><span class="bold">App development by </span><a href="https://tomwendland.de">Tom Wendland</a></p>
-        </section>
     </div>
 </template>
 
@@ -23,8 +21,6 @@ p, a{
     font-family: sans-serif;
     font-size: 0.8rem;
     text-align: justify;
-    font-weight: lighter;
-
 }
 #contact{
     box-sizing: border-box;
@@ -33,15 +29,11 @@ p, a{
 
     section{
         margin-top: 20px;
-        h3{
-            margin-bottom: 5px;
-            font-family: Prata;
-        }
-    }
+        width: 100%;
 
-    img{
-        position: absolute;
-        bottom: 0;
+        p{
+            text-align: center;
+        }
     }
 }
 </style>

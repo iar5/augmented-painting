@@ -42,10 +42,6 @@ p, a{
 
     section{
         margin-top: 20px;
-        h3{
-            margin-bottom: 5px;
-            font-family: Prata;
-        }
     }
 
     a{

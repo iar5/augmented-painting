@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { log } from 'three'
 import ArApp from '../three/App.js'
 import ArPaintingSlider from './ArPaintingSlider.vue'
 
@@ -33,17 +34,12 @@ export default {
     },
     data(){
         return {
-            showGUI: this.$root.$data.isInsideAr
+            showGUI: false
         }
     },
     mounted(){
-        navigator.xr.isSessionSupported('immersive-ar').then(supported => {
-            this.$root.$data.isArSupported = supported
-        })
-
         this.$root.$data.isInsideAr = false
         let arApp = this.$root.$data.arApp = new ArApp(document.querySelector("#arOverlay"), (isInsideAr) => {
-            this.$root.$data.isInsideAr = isInsideAr
             this.showGUI = isInsideAr
         })
 

@@ -7,7 +7,7 @@
       <div id="headerline">
         <div @click="showNav = !showNav" class="pointer">=</div>
         <h1><router-link to="/">Painting Place | ar</router-link></h1>
-        <div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div>
+        <!--div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div-->
       </div>
 
       <nav v-show="showNav">
@@ -54,7 +54,6 @@ export default {
 
 <style lang="scss">
 header{
-  font-family: 'Prata', serif;
   font-weight: normal;
   width: 100%;
   position: sticky;
@@ -76,7 +75,7 @@ header{
     top: 0;
 
     #headerline{
-      padding-top: 25px; // kein margin weil sonst baxshade runter zieht
+      padding-top: 35px; // kein margin weil sonst baxshade runter zieht
       padding-bottom: 20px;
       >*{
         vertical-align: middle;
@@ -94,6 +93,7 @@ header{
         display: inline-block;
         width: calc(100% - 100px);
         font-size: 1.6em;
+        font-family: 'Prata', serif;
       }
     }
 
@@ -108,11 +108,12 @@ header{
           margin: 5px 0;
           a{
             font-size: 1em;
+            font-family: sans-serif;
             color: black;
             text-decoration: none;
 
             &.activeNavLink{
-              font-weight: bold;
+              
             }
           }
         }
