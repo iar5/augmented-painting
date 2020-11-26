@@ -5,7 +5,7 @@
 
             <div id="moveTipp">
                 <img src="/assets/s9icon.svg">
-                <span>move your smartphone slightly around <br> to scan your room structure</span>
+                <span>move your smartphone slightly around <br> to scan your room</span>
             </div>
 
             <div id="bottomUpPanel">

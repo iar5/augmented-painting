@@ -15,9 +15,14 @@
         <section>
             <h3>Supported devices</h3>
             <p>
-                Using augented reality directly in the browser requires a modern mobile device with latest browser versions.
-                In detail: your need a browser which implemnted the WebXR standard, which can be seen as pretty new software technologie.  
+                Using augented reality directly in the browser requires a modern mobile device with latest browser version.
+                In detail: your need a browser which already has implemented the WebXR standard, which can be seen as pretty new software technologie.  
             </p>
+            <br>
+            <p class="bold">Android</p>
+            <p>Painting placer is working on almost all modern android devices. Use Google Chrome or Mozilla Firefox browser for best experience.</p>
+            <br>
+            <p class="bold">Apple</p>
             <p>
                 <span style="font-weight: normal">Unfortunately Painting Placer is not working on common Apple device browsers yet. </span>
                 Until its working there in Safari, Chrome or Firefox I suggest using the WevXR Viewer browser by Mozilla. 
@@ -30,6 +35,10 @@
 
 
 <style scoped lang="scss">
+#help{
+    width: 90%;
+    margin: auto
+}
 p, a{
     font-size: 0.8rem;
     line-height: 1.2rem;
