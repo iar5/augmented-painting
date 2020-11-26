@@ -54,6 +54,7 @@ main{
   min-height: calc(100vh - 75px);
   padding: 0 4%;
   box-sizing: border-box;
+  padding-bottom: 60px;
 
   >div{
     min-height: inherit;
