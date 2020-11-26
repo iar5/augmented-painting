@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="topInfo">
-      <p v-if="arWorking==false">Sorry your device does <br>not support Augmented reality<br> checkout <router-link class="underline pointer" to="/help">help</router-link> section to see why</p>
+      <p v-if="arWorking==false">Sorry your brower does <br>not support Augmented reality<br> checkout <router-link class="underline pointer" to="/help">help</router-link> section to see why</p>
       <p v-else-if="arWorking==true">Click on a painting to start augmented reality</p>
       <p v-else>?</p>
     </div>
