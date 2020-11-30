@@ -32,9 +32,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("/style/reset.css");
-@import url("/style/font.css");
-@import url("/style/components.css");
+@import url("../style/reset.css");
+@import url("../style/font.css");
+@import url("../style/components.css");
 
 html, body{
 	width: 100%;
@@ -105,6 +105,5 @@ a{
   margin: 1%;
   background-color: rgba(255,255,255, 0.4);
   color: black;
-  border: 1px solid  black;
 }
 </style>

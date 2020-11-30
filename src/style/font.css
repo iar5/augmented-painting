@@ -4,7 +4,7 @@
     src: url("./Prata-Regular.ttf");
 }
 
-*, header, #arControler {
+*, header, #arControler, #beta {
     /* header usw fixed pos deswegen applied * die nicht oder so */
     font-family: sans-serif;
 }
