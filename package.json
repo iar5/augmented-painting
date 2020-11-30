@@ -5,13 +5,12 @@
   "scripts": {
     "build": "vue-cli-service build",
     "start": "serve dist",
-    "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve"
+    "dev": "vue-cli-service serve",
+    "deploy": "npm run build && node deploy.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "serve": "^11.3.2",
-    "vue-awesome-swiper": "^4.1.1"
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "@tweenjs/tween.js": "^18.6.4",
@@ -21,6 +20,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "ftp-deploy": "^2.3.8",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.3",
     "stats-js": "^1.0.1",
@@ -29,6 +29,7 @@
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^3.4.9",
     "vue-template-compiler": "^2.6.12"
   },
