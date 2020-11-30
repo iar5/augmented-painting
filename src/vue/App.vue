@@ -32,6 +32,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("/style/reset.css");
+@import url("/style/font.css");
 @import url("/style/components.css");
 
 html, body{
