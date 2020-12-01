@@ -1,6 +1,6 @@
-/*if (location.protocol !== 'https:') {
+if (location.protocol !== 'https:') {
   location.replace(`https:${location.href.substring(location.protocol.length)}`);
-}*/
+}
 
 import Vue from 'vue'
 import VueRouter from 'vue-router';

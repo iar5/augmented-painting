@@ -3,6 +3,7 @@
     <div id="topInfo">
       <p v-if="arWorking==false">Sorry your browser does <br>not support Augmented reality<br> checkout <router-link class="underline pointer" to="/help">help</router-link> section to see why</p>
       <p v-else-if="arWorking==true">Click on a painting to start augmented reality</p>
+      <p v-else-if="igBrowser==true">Please open the website in your default browser (click on the top right 3-dots button and then click "Open in Chrome/Firefox/...")</p>
       <p v-else>?</p>
     </div>
 
@@ -24,6 +25,7 @@ export default {
   data(){
     return {
       arWorking: undefined,
+      igBrowser: undefined,
       paintings: require('./../../public/fotos/data.json')
     }
   },
@@ -31,6 +33,7 @@ export default {
     navigator.xr.isSessionSupported('immersive-ar').then(supported => {
       this.arWorking = !!supported // supported
     })
+    this.igBrowser = navigator.userAgent.includes("Instagram")
   },
   methods: {
     filterPaintings(paintings, format){
