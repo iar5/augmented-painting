@@ -19,10 +19,13 @@
                 In detail: your need a browser which already has implemented the WebXR standard, which can be seen as pretty new software technologie.  
             </p>
             <br>
-            <p class="bold">Android</p>
-            <p>Painting placer is working on almost all modern android devices. Use Google Chrome or Mozilla Firefox browser for best experience.</p>
+            <p class="bold">Instagram and other social media</p>
+            <p>Intagram is using a build-in browser which does not support WebXR. Please open this website in your default browser (click on the top right 3-dots button and then click "Open in Chrome/Firefox/...")</p>
             <br>
-            <p class="bold">Apple</p>
+            <p class="bold">Android</p>
+            <p>Painting placer is working on almost every modern android device. Use Chrome or Firefox browser for best experience.</p>
+            <br>
+            <p class="bold">Apple (iOS, iPadOS)</p>
             <p>
                 <span style="font-weight: normal">Unfortunately Painting Placer is not working on common Apple device browsers yet. </span>
                 Until its working there in Safari, Chrome or Firefox I suggest using the WevXR Viewer browser by Mozilla. 

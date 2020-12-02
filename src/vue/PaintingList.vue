@@ -1,10 +1,9 @@
 <template>
   <div>
     <div id="topInfo">
-      <p v-if="arWorking==false">Sorry your browser does <br>not support Augmented reality<br> checkout <router-link class="underline pointer" to="/help">help</router-link> section to see why</p>
-      <p v-else-if="arWorking==true">Click on a painting to start augmented reality</p>
-      <p v-else-if="igBrowser==true">Please open the website in your default browser (click on the top right 3-dots button and then click "Open in Chrome/Firefox/...")</p>
-      <p v-else>?</p>
+      <p v-if="arWorking==true">Click on a painting to start augmented reality</p>
+      <p v-else-if="arWorking==false"><span class="bold">Important!</span><br>Your browser does not support augmented reality. <br> Checkout <router-link class="underline pointer" to="/help">help</router-link> section to see why.</p>
+      <p v-else><span class="bold">Important!</span> something is not working.<br>Are you coming from a social media link? <br> Please click on the top right 3-dots button and then click "Open in Chrome"</p>
     </div>
 
     <div id="paintings">
@@ -33,7 +32,7 @@ export default {
     navigator.xr.isSessionSupported('immersive-ar').then(supported => {
       this.arWorking = !!supported // supported
     })
-    this.igBrowser = navigator.userAgent.includes("Instagram")
+    this.igBrowser = (navigator.userAgent || navigator.vendor || window.opera).includes('Instagram')
   },
   methods: {
     filterPaintings(paintings, format){
@@ -64,10 +63,11 @@ export default {
   margin: 15px 0 25px 0;
 
   p{
-      padding: 12px;
-      border-radius: 24px;
-      display: inline-block;
-      border: 1px solid black;
+    max-width: 80%;
+    padding: 12px;
+    border-radius: 24px;
+    display: inline-block;
+    border: 1px solid black;
   }
 }
 

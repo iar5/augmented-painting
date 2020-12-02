@@ -1,5 +1,7 @@
 # AR Painting Placer
 
+umbenennen zu augmented-painting.com ?
+
 ## Project Notes
 WebXR benötigt https
 in package.json aktivieren 
