@@ -108,5 +108,15 @@
         "material": "Acryl, Tinte und Sprühfarbe auf Leinwand",
         "width": 50,
         "height": 60
+    },
+       {
+        "id": 12,
+        "title": "Midnight Magic",
+        "src_full": "fotos/full/Midnight Magic - full.jpg",
+        "src_720": "fotos/720/Midnight Magic - 720.png",
+        "publishing_date": "Oktober 2020",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 100,
+        "height": 120
     }
 ]
