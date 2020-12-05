@@ -118,5 +118,66 @@
         "material": "Sprühlack, Acryl und Tinte auf Leinwand",
         "width": 100,
         "height": 120
+    },
+       {
+        "id": 13,
+        "title": "Aperol Spritz und Zwerkdackel",
+        "src_full": "fotos/full/Aperol Spritz und Zwerkdackel - Full.jpg",
+        "src_720": "fotos/720/Aperol Spritz und Zwerkdackel - 720.png",
+        "publishing_date": "September 2020",
+        "material": "Acryl und Ölkreide auf Leinwand",
+        "width": 80,
+        "height": 100
+      },
+       {
+        "id": 14,
+        "title": "What are you waiting for?!",
+        "src_full": "fotos/full/What are you waiting for - Full.jpg",
+        "src_720": "fotos/720/What are you waiting for - 720.png",
+        "publishing_date": "September 2020",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 80,
+        "height": 100
+       },
+       {
+        "id": 15,
+        "title": "Berlin City Girl No 2",
+        "src_full": "fotos/full/Berlin City Girl No 2 - Full.jpg",
+        "src_720": "fotos/720/Berlin City Girl No 2 - 720.png",
+        "publishing_date": "März 2020",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 50,
+        "height": 60
+        },
+       {
+        "id": 16,
+        "title": "Bextown City Girl",
+        "src_full": "fotos/full/Bextown City Girl - Full.jpg",
+        "src_720": "fotos/720/Bextown City Girl - 720.png",
+        "publishing_date": "März 2020",
+        "material": "Sprühlack, Acryl und Tinte auf Leinwand",
+        "width": 50,
+        "height": 60
+         },
+       {
+        "id": 17,
+        "title": "A-Town Citygirl",
+        "src_full": "fotos/A-Town Citygirl - Full.jpg",
+        "src_720": "fotos/720/A-Town Citygirl - 720.png",
+        "publishing_date": "März 2020",
+        "material": "Sprühlack, Acryl, Tinte und Ölkreide auf Leinwand",
+        "width": 50,
+        "height": 60
+    }
+           },
+       {
+        "id": 18,
+        "title": "Look at me",
+        "src_full": "fotos/Look at me - Full.jpg",
+        "src_720": "fotos/720/Look at me - 720.png",
+        "publishing_date": "November 2019",
+        "material": "Sprühlack, Acryl, Tinte und Ölkreide auf Leinwand",
+        "width": 60,
+        "height": 80
     }
 ]
