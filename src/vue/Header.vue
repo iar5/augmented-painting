@@ -29,7 +29,7 @@ export default {
     return {
       nav: [
         //{title: "splash screen", path: "/splash"},
-        {title: "browse paintins", path: "/"},
+        {title: "browse paintings", path: "/"},
         //{title: "introduction", path: "/introduction"},
         {title: "help", path: "/help"},
         {title: "contact", path: "/contact"},
