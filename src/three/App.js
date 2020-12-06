@@ -66,6 +66,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
     controller = renderer.xr.getController(0);
     controller.addEventListener('select', ()=>{
         // called on camera/screen tap
+        placePainting()
     });
 
     scene.add(controller);

@@ -10,20 +10,33 @@ function findPaintingData(id){
     }
 }
 
-export default class Painting extends THREE.Mesh{
+export default class Painting extends THREE.Object3D{
 
     constructor(id){
-        let data = findPaintingData(id)
-        var materials = [
-            new THREE.MeshBasicMaterial( {color: "white"} ),
-            new THREE.MeshBasicMaterial( {color: "white"} ),
-            new THREE.MeshBasicMaterial( { map: texLoader.load(data.src_full) } ),
-            new THREE.MeshBasicMaterial( {color: "white"} ),
-            new THREE.MeshBasicMaterial( {color: "white"} ),
-            new THREE.MeshBasicMaterial( {color: "white"} ),
-        ];
-        var geometry = new THREE.BoxBufferGeometry(parseInt(data.width)/100, 0.1, parseInt(data.height)/100).translate(0, -0.05, 0)
+        super()
 
-        super(geometry, materials)
+        let data = findPaintingData(id)
+        let w = parseInt(data.width)/100
+        let h = parseInt(data.width)/100
+
+        let sidematerial = new THREE.MeshBasicMaterial({color: "#EEEEEE"})
+
+        let materials = [
+            sidematerial.clone(),
+            sidematerial.clone(),
+            new THREE.MeshBasicMaterial({map: texLoader.load(data.src_full)}),
+            sidematerial.clone(),
+            sidematerial.clone(),
+            sidematerial.clone(),
+        ];
+        let geometry = new THREE.BoxBufferGeometry(w, 0.1, h).translate(0, -0.05, 0)
+        let mesh = new THREE.Mesh(geometry, materials)
+        this.add(mesh)
+
+
+        //let spgeo = new THREE.PlaneBufferGeometry(w*1.1, h*1.1)
+        //let spmat = new THREE.MeshBasicMaterial({color: "#CCCCCC"})
+        //let shadowplane = new THREE.Mesh(spgeo, spmat)
+        //this.add(shadowplane)
     }
 }
