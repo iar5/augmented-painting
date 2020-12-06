@@ -128,7 +128,7 @@
         "material": "Acryl und Ölkreide auf Leinwand",
         "width": 80,
         "height": 100
-      },
+    },
        {
         "id": 14,
         "title": "What are you waiting for?!",
@@ -138,7 +138,7 @@
         "material": "Sprühlack, Acryl und Tinte auf Leinwand",
         "width": 80,
         "height": 100
-       },
+    },
        {
         "id": 15,
         "title": "Berlin City Girl No 2",
@@ -148,7 +148,7 @@
         "material": "Sprühlack, Acryl und Tinte auf Leinwand",
         "width": 50,
         "height": 60
-        },
+    },
        {
         "id": 16,
         "title": "Bextown City Girl",
@@ -158,7 +158,7 @@
         "material": "Sprühlack, Acryl und Tinte auf Leinwand",
         "width": 50,
         "height": 60
-         },
+    },
        {
         "id": 17,
         "title": "A-Town Citygirl",
@@ -168,7 +168,7 @@
         "material": "Sprühlack, Acryl, Tinte und Ölkreide auf Leinwand",
         "width": 50,
         "height": 60
-         },
+    },
        {
         "id": 18,
         "title": "Look at me",
@@ -178,5 +178,25 @@
         "material": "Sprühlack, Acryl, Tinte und Ölkreide auf Leinwand",
         "width": 60,
         "height": 80
+    },
+       {
+        "id": 19,
+        "title": "Midnight Love",
+        "src_full": "fotos/full/Midnight Love - Full.jpg",
+        "src_720": "fotos/720/Midnight Love - 720.png",
+        "publishing_date": "November 2020",
+        "material": "Acryl, Sprühlack und Fensterspiegelfolie auf Leinwand",
+        "width": 100,
+        "height": 120
+    },
+       {
+        "id": 20,
+        "title": "Wild Night",
+        "src_full": "fotos/full/Wild Night - Full.jpg",
+        "src_720": "fotos/720/Wild Night - 720.png",
+        "publishing_date": "November 2020",
+        "material": "Acryl auf Leinwand",
+        "width": 100,
+        "height": 120
     }
 ]
