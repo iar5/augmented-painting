@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+
 
 @font-face {
     font-family: "Prata";
@@ -6,5 +9,5 @@
 
 *, header, #arControler, #beta {
     /* header usw fixed pos deswegen applied * die nicht oder so */
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
 }

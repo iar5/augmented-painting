@@ -6,7 +6,7 @@
     <div id="headercontent" :style="showNav ? 'background-color: white': ''">
       <div id="headerline">
         <div @click="showNav = !showNav" class="pointer">=</div>
-        <h1><router-link to="/">Painting Place | ar</router-link></h1>
+        <h1><router-link to="/">Painting Place | AR</router-link></h1>
         <!--div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div-->
       </div>
 
@@ -111,9 +111,7 @@ header{
             color: black;
             text-decoration: none;
     
-            &.activeNavLink{
-              
-            }
+            //&.activeNavLink{}
           }
         }
       }

@@ -13,7 +13,7 @@
         </section>
 
         <section>
-            <h3>Supported devices</h3>
+            <h3>Supported devices/browser</h3>
             <p>
                 Using augented reality directly in the browser requires a modern mobile device with latest browser version.
                 In detail: your need a browser which already has implemented the WebXR standard, which can be seen as pretty new software technologie.  

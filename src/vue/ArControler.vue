@@ -88,6 +88,7 @@ export default {
         top: 15px;
         background: none;
         overflow: visible;
+        border: none;
     }
 
     #bottomUpPanel{ 	
@@ -111,13 +112,13 @@ export default {
     input[type=button]{
         padding: 8px 20px; 
         margin: 2px;
-        border: 0; 
         background: transparent;
         color: white; 
         font-family: 13px; 
         text-align: center; 
         outline: none; 
         text-transform: uppercase;
+        border: 1px solid white; 
         border-radius: 0 !important;
         cursor: pointer;
         z-index: 100;

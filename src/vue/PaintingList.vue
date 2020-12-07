@@ -2,8 +2,7 @@
   <div>
     <div id="topInfo">
       <p v-if="arWorking==true">Click on a painting to start augmented reality</p>
-      <p v-else-if="arWorking==false"><span class="bold">Important!</span><br>Your browser does not support augmented reality. <br> Checkout <router-link class="underline pointer" to="/help">help</router-link> section to see why.</p>
-      <p v-else><span class="bold">Important!</span> something is not working.<br>Are you coming from a social media link? <br> Please click on the top right 3-dots button and then click "Open in Chrome"</p>
+      <p v-else><span class="bold">Important!</span> Something is not working. Checkout <br> <router-link class="underline pointer" to="/help">help/supported-devices</router-link> section on how to fix this.</p>
     </div>
 
     <div id="paintings">
@@ -32,7 +31,6 @@ export default {
     navigator.xr.isSessionSupported('immersive-ar').then(supported => {
       this.arWorking = !!supported // supported
     })
-    this.igBrowser = (navigator.userAgent || navigator.vendor || window.opera).includes('Instagram')
   },
   methods: {
     filterPaintings(paintings, format){
@@ -54,18 +52,19 @@ export default {
 <style scoped lang="scss">
 
 #topInfo{
+
   width: 100%;
   display: flex;
   justify-content: center;
   display: inline-block;
   font-size: 0.6rem;
   text-align: center;
-  margin: 15px 0 25px 0;
+  margin-top: 40px ;
+  margin-bottom: 50px;
 
   p{
     max-width: 80%;
-    padding: 12px;
-    border-radius: 24px;
+    padding: 10px;
     display: inline-block;
     border: 1px solid black;
   }
@@ -79,9 +78,9 @@ export default {
   height: 100%;
 
   .painting{
-    margin-bottom: 20px;
-    width: 45%;
-    padding: 2%;
+    margin-bottom: 24px;
+    width: 44%;
+    padding: 3%;
 
     &.breitBild{
       width: 63%

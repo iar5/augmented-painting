@@ -7,7 +7,7 @@
     </main>
     <ArControler/>
     <div id="bgShadow"></div>
-    <p id="beta">beta version</p>
+    <p id="beta">beta</p>
   </div>
 </template>
 
