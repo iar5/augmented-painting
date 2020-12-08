@@ -11,8 +11,8 @@ var config = {
     localRoot: __dirname + '/dist',
     remoteRoot: '/httpdocs',
     include: ['*', '**/*'],      // this would upload everything except dot files
-    exclude: [],                 // e.g. exclude sourcemaps ['dist/**/*.map'] - ** exclude: [] if nothing to exclude **
-    deleteRemote: true,              // delete ALL existing files at destination before uploading, if true
+    exclude: ['/test/*', '/fotos/*'], // TODO not working fix                 // e.g. exclude sourcemaps ['dist/**/*.map'] - ** exclude: [] if nothing to exclude **
+    deleteRemote: false,              // delete ALL existing files at destination before uploading, if true
     forcePasv: true                 // Passive mode is forced (EPSV command is not sent)
 }
  
