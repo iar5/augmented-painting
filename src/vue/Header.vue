@@ -5,7 +5,8 @@
 
     <div id="headercontent" :style="showNav ? 'background-color: white': ''">
       <div id="headerline">
-        <div @click="showNav = !showNav" class="pointer">=</div>
+        <div @click="showNav = !showNav" class="pointer">
+          {{showNav ? "×" : "="}}</div>
         <h1><router-link to="/">Painting Place | AR</router-link></h1>
         <!--div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div-->
       </div>
@@ -30,7 +31,7 @@ export default {
       nav: [
         //{title: "splash screen", path: "/splash"},
         {title: "browse paintings", path: "/"},
-        //{title: "introduction", path: "/introduction"},
+        {title: "guide", path: "/guide"},
         {title: "help", path: "/help"},
         {title: "contact", path: "/contact"},
       ],
@@ -70,7 +71,7 @@ header{
 
   #headercontent{ // extra container damit nicht z indizieren für bg muss
     width: 100%;
-    //background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     position: absolute;
     top: 0;
 

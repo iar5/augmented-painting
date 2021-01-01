@@ -8,8 +8,8 @@ import App from './vue/App.vue'
 import Contact from './vue/Contact.vue'
 import Help from './vue/Help.vue'
 import Splash from './vue/Landing.vue'
-import PaintingList from './vue/PaintingList.vue'
-import Introduction from './vue/Introduction.vue'
+import List from './vue/List.vue'
+import Guide from './vue/Guide.vue'
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false
@@ -17,9 +17,12 @@ Vue.config.productionTip = false
 
 const router = new VueRouter({
   mode: 'hash',
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
   routes: [
-    { path: '/', component: PaintingList },
-    { path: '/introduction', component: Introduction },
+    { path: '/', component: List },
+    { path: '/guide', component: Guide },
     { path: '/contact', component: Contact },
     { path: '/help', component: Help },
     { path: '/splash', component: Splash },

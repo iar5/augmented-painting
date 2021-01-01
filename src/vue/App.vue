@@ -1,13 +1,11 @@
 <template>
   <div id="app">
     <Header/>
-    <div id="headerPlaceholder"></div>
+    <div id="header-placeholder"></div>
     <main>
       <router-view></router-view>
     </main>
     <ArControler/>
-    <div id="bgShadow"></div>
-    <p id="beta">beta</p>
   </div>
 </template>
 
@@ -36,10 +34,12 @@ export default {
 @import url("../style/font.css");
 @import url("../style/components.css");
 
+
 html, body{
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
+
 #app{
   position: relative;
   width: 100%;
@@ -47,16 +47,23 @@ html, body{
   margin: 0 auto;
   box-sizing: border-box;
   min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
 }
 
-#headerPlaceholder{
-  height: 75px  // weil header sticky bzw absolute ist er aus dom flus raus
+@media (min-width: 500px){
+  body{
+    padding: 20px 0
+  }
 }
+
+#header-placeholder{
+  height: 75px  // weil header sticky bzw absolute ist er aus dom flus raus und ich hier die höhe brauch um minheight 100vh zu berechnen
+}
+
 main{
   min-height: calc(100vh - 75px);
   padding: 0 4%;
   box-sizing: border-box;
-  padding-bottom: 60px;
 
   >div{
     min-height: inherit;
@@ -72,6 +79,7 @@ h2{
   width: 100%;
   text-align: center;
 }
+
 h3{
   font-size: 1rem;
   margin-top: 10px;
@@ -80,30 +88,4 @@ h3{
   text-align: center;
 }
 
-a{
-  color: black;
-}
-
-#bgShadow{
-  position: fixed;
-  top: 0;
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-  height: 100vh;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
-  z-index: -100;
-  pointer-events: none;
-}	
-
-#beta{
-  font-size: 0.6rem;
-  position: fixed;
-  left: 0; 
-  bottom: 0;
-  padding: 2px;
-  margin: 1%;
-  background-color: rgba(255,255,255, 0.4);
-  color: black;
-}
 </style>
