@@ -5,7 +5,7 @@
         <section>
             <p>Paintings by <a class="underline" href="https://www.instagram.com/dion.ateliero/">DION</a></p>
             <br>
-            <p>App development by <a class="underline" href="https://tomwendland.de">Tom Wendland</a></p>
+            <p>Webapp development by <a class="underline" href="https://tomwendland.de">Tom Wendland</a></p>
         </section>
 
     </div>
