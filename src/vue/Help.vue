@@ -23,7 +23,7 @@
             <p>Intagram is using a build-in browser which does not support WebXR. Please open this website in your default browser (click on the top right 3-dots button and then click "Open in Chrome/Firefox/...")</p>
             <br>
             <p class="bold">Android</p>
-            <p>Painting placer is working on almost every modern android device. Use Chrome or Firefox browser for best experience.</p>
+            <p>Painting Placer is working in Chrome browser on almost every modern android device.</p>
             <br>
             <p class="bold">Apple (iOS, iPadOS)</p>
             <p>
