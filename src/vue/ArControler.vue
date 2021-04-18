@@ -38,31 +38,40 @@ export default {
         }
     },
     mounted(){
+        console.log("WebXR controler created")
+
         this.$root.$data.isInsideAr = false
-        let arApp = this.$root.$data.arApp = new ArApp(document.querySelector("#arOverlay"), (isInsideAr) => {
-            this.showGUI = isInsideAr
+        this.$root.$data.arApp = new ArApp(document.querySelector("#arOverlay"))
+        this.$root.$data.arApp.isArWorking((ok)=>{
+            this.$root.$data.isArWorking = ok
+        })
+        this.$root.$data.arApp.setOpenCloseCallback(insideXR => {
+            this.showGUI = insideXR
+            if(insideXR == false) placeBtn.value = "place"
         })
 
-        let moveTipp = document.getElementById("moveTipp")
+
+        const arApp =  this.$root.$data.arApp 
+
+        const moveTipp = document.getElementById("moveTipp")
         arApp.setOnFirstReticleCallback(()=>{
             moveTipp.classList.add("hideTipp")
         })
 
-        let placeBtn = document.getElementById("placeBtn")
+        const placeBtn = document.getElementById("placeBtn")
         placeBtn.addEventListener("click", ()=>{
             let p = arApp.isPaintingPlaced() 
             let r = arApp.isReticle() 
 
-            if(!p && r){
-                arApp.placePainting()
-                placeBtn.value = "reset"
-            }
-            else if(p){
+            if(p){
                 arApp.removePainting()
                 placeBtn.value = "place"
             }
+            else if(!p && r){
+                arApp.placePainting()
+                placeBtn.value = "reset"
+            }
         })
-        
     },
     methods:{
         exit(){

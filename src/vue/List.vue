@@ -6,7 +6,7 @@
     </div>
 
     <div id="paintings">
-      <div :style="{opacity: p._loaded ? 1 : 0}" class="painting" v-for="p in paintings" :key=p.id :class="p.width > p.height ? 'breitBild' : ''"  @click="openXRWithPainting(p.id)">
+      <div :style="{opacity: p._loaded ? 1 : 0}" class="painting" v-for="p in paintings" :key=p.id :class="p.width > p.height ? 'breitBild' : ''"  @click="openXRWithPainting(p)">
         <img :src="p.src_720" :width="p.width" :height="p.height" @load="p._loaded=true">
         <p class="title">{{p.title}}</p>
         <p class="info">{{p.width}} × {{p.height}}</p>
@@ -23,18 +23,13 @@ paintings.forEach(element=>{
   element._loaded = false
 })
 
+
 export default {
   data(){
     return {
-      arWorking: undefined,
       paintings,
       infoOpacity: 1
     }
-  },
-  created(){
-    navigator.xr.isSessionSupported('immersive-ar').then(supported => {
-      this.arWorking = !!supported 
-    })
   },
   mounted(){
     window.onscroll = () => {
@@ -52,8 +47,11 @@ export default {
         }
       })
     },
-    openXRWithPainting(pid){
-      if(this.arWorking) this.$root.$data.arApp.openXR(pid)
+    openXRWithPainting(p){
+      if(this.$root.$data.isArWorking) {
+        this.$root.$data.arApp.openXR()
+        this.$root.$data.arApp.setPainting(p.src_full, p.width, p.height)
+      }
     }
   }
 }

@@ -1,14 +1,32 @@
 <template>
     <div id="introduction">
 
-        <h2>Introduction by example</h2>
+        <h2>Video example</h2>
         
-        <div id="video-wrapper">
-            <video src="/media/video1.mp4" width="590px" height="1280px" controls muted></video>
+        <div id="guide">
+            <div id="video-wrapper" :style="{opacity: videoloaded? 1 : 0}" >
+                <video id="guide-video" src="/media/video1.mp4" :loaded="this.videoloaded=true" width="590px" height="1280px" controls muted></video>
+            </div>
+            <div id="img-wrapper">
+                <img src="/assets/s9handcenterbg.png" width="887px" height="887px">
+            </div>
         </div>
-        <img src="/assets/s9handcenter.png" width="887px" height="887px">
+
     </div>
 </template>
+
+
+<script>
+import { log } from 'three'
+
+export default {
+    data(){
+        return {
+            videoloaded: false
+        }
+    }
+}
+</script>
 
 
 
@@ -20,31 +38,54 @@ p, a{
 }
 
 #introduction{
-    position: relative;
 
-    img{
-        width: 100%;
-        height: auto;
+    #guide{
+        height: calc(100vh - 175px); 
+        max-height: 1000px;
         position: absolute;
+        left: 0;
+        right: 0;
         bottom: 0;
-        box-sizing: border-box;
-        pointer-events: none;
-    }
 
-    #video-wrapper{
-        position: absolute;
-        bottom: 50px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
+        #video-wrapper{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-content: center;
+            transition: opacity 1s;
 
-        video{
-            width: 40%;
-            height: auto;
+            video{
+                height: 88%;
+                width: auto;
+                max-width: 100%;
+                margin: auto;
+                margin-top: 10px;
+            }
+        }
+
+        #img-wrapper{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            img{
+                object-fit: cover;
+                width: auto;
+                height: auto;
+                min-width: 100%;
+                min-height: 100%;
+                box-sizing: border-box;
+                pointer-events: none;
+            }
         }
     }
 }
-
-
-
 </style>

@@ -34,6 +34,7 @@ export default {
         {title: "guide", path: "/guide"},
         {title: "help", path: "/help"},
         {title: "contact", path: "/contact"},
+        {title: "upload your own", path: "/custom"},
       ],
       currentRouteName: "",
       showNav: false,
@@ -55,6 +56,7 @@ export default {
 
 <style lang="scss">
 header{
+  height: 75px;
   font-weight: normal;
   width: 100%;
   position: sticky;

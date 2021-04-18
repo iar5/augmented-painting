@@ -25,7 +25,7 @@
     "sass-loader": "^9.0.3",
     "stats-js": "^1.0.1",
     "swiper": "^6.3.4",
-    "three": "^0.121.1",
+    "three": "^0.127.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "vue": "^2.6.12",
@@ -35,7 +35,7 @@
   },
   "vue": {
     "devServer": {
-      "host": "localhost",
+      "host": "0.0.0.0",
       "port": 8080,
       "https": true
     }

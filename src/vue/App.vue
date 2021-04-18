@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header/>
-    <div id="header-placeholder"></div>
     <main>
       <router-view></router-view>
     </main>
@@ -48,6 +47,8 @@ html, body{
   box-sizing: border-box;
   min-height: 100vh;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.21);
+  display: flex;
+  flex-flow: column;
 }
 
 @media (min-width: 500px){
@@ -56,12 +57,8 @@ html, body{
   }
 }
 
-#header-placeholder{
-  height: 75px  // weil header sticky bzw absolute ist er aus dom flus raus und ich hier die höhe brauch um minheight 100vh zu berechnen
-}
-
 main{
-  min-height: calc(100vh - 75px);
+  flex: 1;
   padding: 0 4%;
   box-sizing: border-box;
 
@@ -74,10 +71,11 @@ main{
 
 h2{
   font-size: 1.4rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
   width: 100%;
   text-align: center;
+  font-family: 'Prata', serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 h3{

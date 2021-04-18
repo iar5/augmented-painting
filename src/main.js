@@ -10,6 +10,7 @@ import Help from './vue/Help.vue'
 import Splash from './vue/Landing.vue'
 import List from './vue/List.vue'
 import Guide from './vue/Guide.vue'
+import Custom from './vue/Custom.vue'
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false
@@ -26,7 +27,7 @@ const router = new VueRouter({
     { path: '/contact', component: Contact },
     { path: '/help', component: Help },
     { path: '/splash', component: Splash },
-
+    { path: '/custom', component: Custom },
     { path: '*', redirect: (to) => { return "/" }},    
   ]
 })

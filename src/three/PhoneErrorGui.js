@@ -1,6 +1,6 @@
 
 
-export default class ErrorGui{
+export default class PhoneErrorGui{
 
     constructor(){
         let div = document.createElement("div")

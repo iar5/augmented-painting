@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import { ARButton } from 'three/examples/jsm/webxr/ARButton'
 import { Vector3, Quaternion, Matrix4, Euler } from 'three'
 import Painting from './Painting.js'
-import ErrorGui from './ErrorGui.js'
 
 /**
  * https://github.com/mrdoob/three.js/blob/master/examples/webxr_ar_hittest.html
@@ -13,47 +12,42 @@ import ErrorGui from './ErrorGui.js'
  /**
   * 
   * @param {DOMOElement} GUIOvelayElement 
-  * @param {Callback?} XROnOffCallback 
   */
-export default function(GUIOvelayElement, XROnOffCallback){
+export default function(GUIOvelayElement){
     
-    var camera
-    var scene 
-    var renderer
-    var arbutton
+    console.log("AR App created")
+
     var controller
     var reticle
-    
     var isArRunning = false
-    var default_pid = 0
     var painting = null
 
     var firstReticleFound = false
-    var firstReticleCallback = ()=>{}
-    
 
-    new ErrorGui()
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth/window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    }, false);
+    var firstReticleCallback
+    var XROnOffCallback
 
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.xr.enabled = true;
+    renderer.setAnimationLoop(render);
 
-    arbutton = ARButton.createButton(renderer, { 
+    const arbutton = ARButton.createButton(renderer, {
         requiredFeatures: ['hit-test'],
-        optionalFeatures: ['dom-overlay'],
+        optionalFeatures: ['dom-overlay', 'dom-overlay-for-handheld-ar'],
         domOverlay: { root: GUIOvelayElement } 
     })
 
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20);
+    const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20);
 
-    var light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+
+    const scene = new THREE.Scene();
+    //scene.add(new THREE.AxesHelper(1));
+
+    const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
     light.position.set(0.5, 1, 0.25);
     scene.add(light); // TODO brauch ich das?
 
@@ -66,13 +60,10 @@ export default function(GUIOvelayElement, XROnOffCallback){
     controller = renderer.xr.getController(0);
     controller.addEventListener('select', ()=>{
         // called on camera/screen tap
-        placePainting()
+        placePainting() 
     });
-
     scene.add(controller);
-    //scene.add(new THREE.AxesHelper(1));
 
-    renderer.setAnimationLoop(render);
 
 
 
@@ -81,9 +72,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
         return isArRunning
     }
 
-    function openXR(pid){
-        removePainting()
-        if(pid) default_pid = pid
+    function openXR(){
         if(!isArRunning) {
             arbutton.click()
             if(XROnOffCallback) XROnOffCallback(true);
@@ -91,19 +80,22 @@ export default function(GUIOvelayElement, XROnOffCallback){
     }
 
     function closeXR(){
-        removePainting()
         if(isArRunning) {
             arbutton.click()
             if(XROnOffCallback) XROnOffCallback(false);
         }
     }
 
-    function placePainting(pid = default_pid){
+    function setPainting(src, width, height){
+        if(painting) removePainting()
+        painting = new Painting(src, width, height);
+    }
+
+    function placePainting(){
         if(!isArRunning) return
         
         let ok = isReticle()
         if(ok) {
-            painting = new Painting(pid);
             painting.position.setFromMatrixPosition(reticle.matrix);
             painting.rotation.setFromRotationMatrix(reticle.matrix);
 
@@ -114,12 +106,14 @@ export default function(GUIOvelayElement, XROnOffCallback){
     }
 
     function removePainting(){
-        if(isPaintingPlaced()) scene.remove(painting)
-        painting=null
+        scene.remove(painting)
     }
 
     function isPaintingPlaced(){
-        return !!painting
+        if(painting){
+            return painting.parent == scene
+        }
+        else return false
     }
 
     function isReticle(){
@@ -132,7 +126,6 @@ export default function(GUIOvelayElement, XROnOffCallback){
     let aZ = new Vector3()
     let yUp = new Vector3(0,1,0)
     let xUp = new Vector3(1,0,0)
-    var i = 0
 
     var hitTestSource = null
     var hitTestSourceRequested = false
@@ -142,9 +135,8 @@ export default function(GUIOvelayElement, XROnOffCallback){
         isArRunning = !!frame
 
         if(isArRunning){
-            i++
-
-            if(!painting){
+            
+            if (!isPaintingPlaced()){
                 var referenceSpace = renderer.xr.getReferenceSpace();
                 var session = renderer.xr.getSession();
 
@@ -170,7 +162,7 @@ export default function(GUIOvelayElement, XROnOffCallback){
 
                         if(!firstReticleFound){
                             firstReticleFound = true
-                            firstReticleCallback()
+                            if (firstReticleCallback) firstReticleCallback()
                         }
         
                         reticle.matrix.fromArray(hit.getPose(referenceSpace).transform.matrix);
@@ -194,15 +186,24 @@ export default function(GUIOvelayElement, XROnOffCallback){
 
 
     return {
+        openXR,
+        closeXR,
         isInsideXR,
         isReticle,
         isPaintingPlaced,
-        openXR,
-        closeXR,
+        setPainting,
         placePainting,
         removePainting,
         setOnFirstReticleCallback(c){
             firstReticleCallback = c
+        },
+        isArWorking(c){
+            navigator.xr.isSessionSupported('immersive-ar').then(supported => {
+                 c(!!supported)
+            })
+        },
+        setOpenCloseCallback(c){
+            XROnOffCallback = c
         }
     }
 }
