@@ -1,10 +1,10 @@
 <template>
   <div id="app">
+    <ArControler/>
     <Header/>
     <main>
       <router-view></router-view>
     </main>
-    <ArControler/>
   </div>
 </template>
 

@@ -13,15 +13,15 @@
             </label>
             
             <label class="customwh">
-                <span>width</span>
+                <span>Width</span>
                 <input type="number" id="custom-width" disabled placeholder="cm">
             </label>
             <label class="customwh">
-                <span>height</span>
+                <span>Height</span>
                 <input type="number" id="custom-height" disabled placeholder="cm">
             </label>
 
-            <input type="button" id="startcustombtn" disabled value="start augmented reality">
+            <input type="button" id="startcustombtn" disabled value="Start Augmented Reality">
         </div>
 
     </div>
@@ -98,6 +98,7 @@ export default {
     }
 
     #file-upload{
+        margin-bottom: 20px;
         input{
             display: none;
         }
@@ -125,6 +126,9 @@ export default {
     }
 
     #startcustombtn{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         margin: auto;
         border: 1px solid grey;
         background: white;

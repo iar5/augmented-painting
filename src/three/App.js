@@ -47,9 +47,6 @@ export default function(GUIOvelayElement){
     const scene = new THREE.Scene();
     //scene.add(new THREE.AxesHelper(1));
 
-    const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
-    light.position.set(0.5, 1, 0.25);
-    scene.add(light); // TODO brauch ich das?
 
     reticle = new THREE.Mesh(new THREE.RingBufferGeometry(0.15, 0.2, 32).rotateX(-Math.PI/2), new THREE.MeshBasicMaterial());
     reticle.matrixAutoUpdate = false; // wenn false ändert position, rotation etc properties die matrix propertie nicht automatisch

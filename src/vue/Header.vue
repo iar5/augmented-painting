@@ -30,11 +30,11 @@ export default {
     return {
       nav: [
         //{title: "splash screen", path: "/splash"},
-        {title: "browse paintings", path: "/"},
-        {title: "guide", path: "/guide"},
-        {title: "help", path: "/help"},
-        {title: "contact", path: "/contact"},
-        {title: "upload your own", path: "/custom"},
+        {title: "Browse Paintings", path: "/"},
+        {title: "Example Video", path: "/guide"},
+        {title: "Help", path: "/help"},
+        {title: "Contact", path: "/contact"},
+        {title: "Custom AR Painting", path: "/custom"},
       ],
       currentRouteName: "",
       showNav: false,

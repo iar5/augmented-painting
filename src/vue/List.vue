@@ -1,8 +1,8 @@
 <template>
   <div>
     <div id="topInfo" :style="{'opacity': infoOpacity}">
-      <p v-if="arWorking==true">Click on a painting to start augmented reality</p>
-      <p v-else>Sorry your current browser does not support this. Checkout <br> <router-link class="underline pointer" to="/help">help/supported-devices</router-link> section on how to fix it.</p>
+      <p v-if="arWorking===true">Click on a painting to start augmented reality</p>
+      <p v-else-if="arWorking===false">Sorry your current browser does not support this. Checkout <br> <router-link class="underline pointer" to="/help">help/supported-devices</router-link> section on how to fix it.</p>
     </div>
 
     <div id="paintings">
@@ -27,6 +27,7 @@ paintings.forEach(element=>{
 export default {
   data(){
     return {
+      arWorking: undefined,
       paintings,
       infoOpacity: 1
     }
@@ -36,6 +37,9 @@ export default {
       let s = document.body.scrollTop || document.documentElement.scrollTop
       this.infoOpacity = 1-(s/60)
     }
+    this.$root.$data.arApp.isArWorking((ok)=>{
+        this.arWorking = ok
+    })
   },
   methods: {
     filterPaintings(paintings, format){
