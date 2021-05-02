@@ -5,7 +5,9 @@
         
         <div id="guide">
             <div id="video-wrapper" :style="{opacity: videoloaded? 1 : 0}" >
-                <video id="guide-video" src="/media/video1.mp4" :loaded="this.videoloaded=true" width="590px" height="1280px" controls muted></video>
+                <video id="guide-video" :loaded="this.videoloaded=true" width="590px" height="1280px" controls muted>
+                    <source src="/media/video1_1.mp4?sad" type="video/mp4">
+                </video>
             </div>
             <div id="img-wrapper">
                 <img src="/assets/s9handcenterbg.png" width="887px" height="887px">

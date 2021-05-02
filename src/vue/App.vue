@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <!-- für crawler -->
+    <div style="display: none">
+      <p>View and place paintings in your home using augmented reality in the browser and see if you like them in the environment and position.</p>
+    </div>
     <ArControler/>
     <Header/>
     <main>
