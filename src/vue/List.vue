@@ -2,7 +2,7 @@
   <div>
     <div id="topInfo" :style="{'opacity': infoOpacity}">
       <p v-if="arWorking===true">Click on a painting to start augmented reality</p>
-      <p v-else-if="arWorking===false">Sorry your current browser does not support this. Checkout <br> <router-link class="underline pointer" to="/help">help/supported-devices</router-link> section on how to fix it.</p>
+      <p v-else-if="arWorking===false">Your current browser does not support required technology. Checkout <br> <router-link class="underline pointer" to="/help">help/supported-devices</router-link> section on how to fix it.</p>
     </div>
 
     <div id="paintings">

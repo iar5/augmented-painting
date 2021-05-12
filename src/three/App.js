@@ -195,6 +195,7 @@ export default function(GUIOvelayElement){
             firstReticleCallback = c
         },
         isArWorking(c){
+            if (!navigator.xr || !navigator.xr.isSessionSupported) c(false)
             navigator.xr.isSessionSupported('immersive-ar').then(supported => {
                  c(!!supported)
             })

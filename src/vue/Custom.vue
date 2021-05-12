@@ -9,7 +9,7 @@
             </div>
             <label id="file-upload">
                 <input id="file-upload-input" type="file" accept="image/png, image/jpeg">
-                <p>Select a image</p>
+                <input id="file-upload-btn" type="button" class="btn" value="Select a image">
             </label>
             
             <label class="customwh">
@@ -21,7 +21,9 @@
                 <input type="number" id="custom-height" disabled placeholder="cm">
             </label>
 
-            <input type="button" id="startcustombtn" disabled value="Start Augmented Reality">
+            <input type="button" id="startcustombtn" class="btn" disabled value="Start Augmented Reality">
+
+            <p v-if="arWorking===false" id="customError">Your current browser does not support required technology. Checkout <br> <router-link class="underline pointer" to="/help">help/supported-devices</router-link> section on how to fix it.</p>
         </div>
 
     </div>
@@ -30,6 +32,11 @@
 
 <script>
 export default {
+    data(){ 
+        return {
+            arWorking: undefined,
+        }
+    },
     mounted() {
         let imgEl = document.getElementById("custom-img")
 
@@ -65,6 +72,13 @@ export default {
                 this.$root.$data.arApp.setPainting(imgEl.src, w, h)
             }     
         })
+
+        this.$root.$data.arApp.isArWorking((ok)=>{
+            this.arWorking = ok
+            if(ok == false){
+                document.getElementById("file-upload-btn").disabled = true
+            }
+        })
     }
 }
 </script>
@@ -99,7 +113,7 @@ export default {
 
     #file-upload{
         margin-bottom: 20px;
-        input{
+        input[type="file"]{
             display: none;
         }
         p{
@@ -124,20 +138,27 @@ export default {
             box-sizing: border-box;
         }
     }
-
-    #startcustombtn{
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        margin: auto;
-        border: 1px solid grey;
-        background: white;
-        text-align: center;
-        padding: 4px 8px;
-        box-sizing: border-box;
-        border-radius: 4px;
-        font-size: 1rem;
-    }
 }
 
+.btn{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: auto;
+    border: 1px solid grey;
+    background: white;
+    text-align: center;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+
+#customError{
+    margin-top: 20px; 
+    font-size: 0.8rem;
+    &, * { color: red }
+}
 </style>

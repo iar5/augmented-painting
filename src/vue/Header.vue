@@ -64,7 +64,7 @@ header{
   z-index: 10;
 
   #headerbg{
-    background: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -73,7 +73,6 @@ header{
 
   #headercontent{ // extra container damit nicht z indizieren für bg muss
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
     position: absolute;
     top: 0;
     transition: opacity 1s;
@@ -124,17 +123,19 @@ header{
   
 
 header{
-  * {
+  &, * {
     transition: all 0.5s;
   }
   #headerbg{
     opacity: 0;
-    pointer-events: none;
+    display: none
+  }
+  #headerline{
+    background-color: rgba(255, 255, 255, 0.9);
   }
   nav{
     opacity: 0;
-    pointer-events: none;
-    height: 0
+    display: none
   }
 }
 
@@ -143,14 +144,13 @@ header.showNav{
     display: initial;
     opacity: 1;
   }
-  #headercontent{
+  #headerline{
     background-color: white
   }
   nav{
     display: inline-block;
     opacity: 1;
-    pointer-events: initial;
-    height: initial
+    background-color: white
   }
 }
 </style>
