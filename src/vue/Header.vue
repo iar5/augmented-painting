@@ -1,9 +1,9 @@
 <template>
-  <header>
+  <header :class="showNav ? 'showNav': ''" >
 
-    <div v-show="showNav" id="headerbg" @click="showNav = false"></div>
+    <div id="headerbg" @click="showNav = false"></div>
 
-    <div id="headercontent" :style="showNav ? 'background-color: white': ''">
+    <div id="headercontent">
       <div id="headerline">
         <div @click="showNav = !showNav" class="pointer">
           {{showNav ? "×" : "="}}</div>
@@ -11,7 +11,7 @@
         <!--div class="pointer"><img src="/assets/aricon.png" @click="openXR()"></div-->
       </div>
 
-      <nav v-show="showNav">
+      <nav>
         <ul>
           <li v-for="(n, i) in nav" :key="i" @click="showNav=false">
             <router-link :class="{'activeNavLink': isActiveNavLink(n.path)}" :to="n.path">{{n.title}}</router-link>
@@ -31,7 +31,7 @@ export default {
       nav: [
         //{title: "splash screen", path: "/splash"},
         {title: "Browse Paintings", path: "/"},
-        {title: "Example Video", path: "/guide"},
+        {title: "Showcase", path: "/guide"},
         {title: "Help", path: "/help"},
         {title: "Contact", path: "/contact"},
         {title: "Custom AR Painting", path: "/custom"},
@@ -76,6 +76,7 @@ header{
     background: rgba(255, 255, 255, 0.9);
     position: absolute;
     top: 0;
+    transition: opacity 1s;
 
     #headerline{
       padding-top: 35px; // kein margin weil sonst baxshade runter zieht
@@ -101,7 +102,6 @@ header{
     }
 
     nav{
-      display: inline-block;
       width: 100%;
       text-align: center;
 
@@ -122,4 +122,35 @@ header{
   }
 }
   
+
+header{
+  * {
+    transition: all 0.5s;
+  }
+  #headerbg{
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav{
+    opacity: 0;
+    pointer-events: none;
+    height: 0
+  }
+}
+
+header.showNav{
+  #headerbg{
+    display: initial;
+    opacity: 1;
+  }
+  #headercontent{
+    background-color: white
+  }
+  nav{
+    display: inline-block;
+    opacity: 1;
+    pointer-events: initial;
+    height: initial
+  }
+}
 </style>

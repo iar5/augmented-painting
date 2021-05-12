@@ -1,6 +1,7 @@
 # AR Painting Placer
 
 umbenennen zu augmented-painting.com ?
+anstatt deploy script github actions?!
 
 ## Project Notes
 WebXR benötigt https

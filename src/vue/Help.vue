@@ -40,7 +40,8 @@
 <style scoped lang="scss">
 #help{
     width: 90%;
-    margin: auto
+    margin: auto;
+    padding-bottom: 50px;
 }
 p, a{
     font-size: 0.8rem;

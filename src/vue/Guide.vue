@@ -1,7 +1,7 @@
 <template>
     <div id="introduction">
 
-        <h2>Video example</h2>
+        <h2>Showcase</h2>
         
         <div id="guide">
             <div id="video-wrapper" :style="{opacity: videoloaded? 1 : 0}" >
