@@ -1,5 +1,5 @@
 <template>
-    <div id="arControler" :class="showGUI ? 'isInsideAr' : ''">
+    <div id="arControler" v-show="showGUI">
         <div id="arOverlay">
             <input type="button" id="exit" value="✕" @click="exit">
 
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import { log } from 'three'
 import ArApp from '../three/App.js'
 import ArPaintingSlider from './ArPaintingSlider.vue'
 
@@ -82,12 +81,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#arControler{
+/* #arControler{
     visibility: hidden;
     &.isInsideAr{
-        visibility: visible; // mit v-show klappt nicht richtig
+        // visibility: visible; // mit v-show klappt nicht richtig
     }
-}
+}*/
 
 #arOverlay{
     #exit{
