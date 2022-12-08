@@ -1,22 +1,22 @@
 <template>
   <div id="arPaintingSlider">
-      <swiper :options="swiperOption" @slideChange="onSlideChange">
+      <!-- <swiper :options="swiperOption" @slideChange="onSlideChange">
         <swiper-slide v-for="p of paintings" :key="p.id">
             <img :src="p.src_720" :width="p.width" :height="p.height">
         </swiper-slide>
-      </swiper>
+      </swiper> -->
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
+// import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+// import 'swiper/swiper-bundle.css'
 
 export default {
-    components:{
-        Swiper,
-        SwiperSlide
-    },
+    // components:{
+    //     Swiper,
+    //     SwiperSlide
+    // },
     data(){
         return{
             paintings: require('./../../public/fotos/data.json'),

@@ -1,6 +1,6 @@
-if (location.protocol !== 'https:') {
-  location.replace(`https:${location.href.substring(location.protocol.length)}`);
-}
+// if (location.protocol !== 'https:') {
+//   location.replace(`https:${location.href.substring(location.protocol.length)}`);
+// }
 
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -17,7 +17,6 @@ Vue.config.productionTip = false
 
 
 const router = new VueRouter({
-  mode: 'hash',
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
@@ -36,5 +35,8 @@ new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
+
+
+
 
 
