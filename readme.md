@@ -1,28 +1,12 @@
-# AR Painting Placer
+# Augmented painting placer
 
-umbenennen zu augmented-painting.com ?
-anstatt deploy script github actions?!
+## Description
+- mobil first web app to display AR paintings on walls
+- 3d based on Three.js
+- works on android
+- only iOS browser supporting required WebXR features right now is "WebXR Viewer"
 
-## Project Notes
-WebXR benötigt https
-in package.json aktivieren 
-ist zum devn deaktiviet weil hot reload sonst nicht geht
+## Development
+- WebXR requires local server to have https
+- see in package.json aktivieren script (hot reload not working in that mode tho)
 
-## @Valle how to upload new paintings
-
-#### Upload
-- in '/public/fotos/full' voll aufgelöste Bild Version hochladen (die Version wird im AR Modus angezeigt)
-- in '/public/fotos/720' dasselbe Bild in einer niederigen Auflösung
-  - Wenn hochkannt Bild dann auf 720px Breite 
-  – Wenn Breitbild 720 dann auf 720px Höhe 
-  - Bei Quadrat beide Seiten 720px
-  - (also kleinste Seite einfach immer 720px)
-
-- Hochladen oben rechts auf "Add file", dann unten auf „Commit changes“ klicken
-
-#### Registrieren
-- in '/data.json' oben rechts auf Stift Icon „edit this file”
-- den letzten Fotoeintrag kopieren und unten anüegen (ein , zwischen dem letzten und dem neuen Eintrag nicht vergessen)
-- Infos entsprechend anpassen
-- Beachten dass evtl leerzeichen in Bildnamen
-- Größe in CM angeben
